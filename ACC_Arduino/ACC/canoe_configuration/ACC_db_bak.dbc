@@ -1,0 +1,137 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: EnginControl InstrumentCluster BrakeControl ACC
+VAL_TABLE_ ACCState 5 "Fault" 4 "DriverInterventionRequired" 3 "Standby" 2 "Active" 0 "OFF" ;
+VAL_TABLE_ BrakeApplyingState 1 "Apply" 0 "DonotApply" ;
+VAL_TABLE_ CruiseSwitchState 6 "Time Gap-" 5 "Time Gap+" 4 "Resume" 3 "Coast" 2 "Set / Accel" 1 "ON" 0 "OFF" ;
+VAL_TABLE_ BrakeSwichState 1 "AppliedBrakeSwitch" 0 "NotAppliedBrakeSwitch" ;
+
+
+BO_ 1024 ECM_inf: 8 EnginControl
+ SG_ BrakeSwitch2 : 0|1@1+ (1,0) [0|1] ""  ACC
+
+BO_ 768 BCM_info: 8 BrakeControl
+ SG_ VehicleSpeed : 0|8@1+ (1,0) [0|255] ""  ACC,EnginControl
+
+BO_ 256 ACC_info: 8 ACC
+ SG_ TargetSpeed : 8|8@1+ (1,0) [0|255] ""  EnginControl
+ SG_ BrakeDecelRequest : 4|1@1+ (1,0) [0|1] ""  BrakeControl
+ SG_ ACCSTATE : 31|3@1+ (1,0) [0|7] ""  EnginControl,BrakeControl
+ SG_ ACCDriverInformationMessage : 0|3@1+ (1,0) [0|7] ""  InstrumentCluster
+
+BO_ 512 ICM_Command: 8 InstrumentCluster
+ SG_ BrakeSwitch1 : 7|1@1+ (1,0) [0|1] ""  ACC
+ SG_ CruiseSwitchRequest : 0|3@1+ (1,0) [0|7] ""  ACC
+
+
+
+BA_DEF_ BO_  "GenMsgDLC" INT 0 8;
+BA_DEF_  "NmAsrCanMsgCycleTime" INT 0 0;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 536870911;
+BA_DEF_ BU_  "NmNode" ENUM  "no","yes";
+BA_DEF_ BU_  "NmAsrNodeIdentifier" HEX 0 255;
+BA_DEF_ BU_  "NmAsrCanMsgReducedTime" INT 0 6400;
+BA_DEF_ BU_  "NmAsrCanMsgCycleOffset" INT 0 0;
+BA_DEF_ SG_  "NWM_WakeupAllowed" ENUM  "Yes","No";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 100000;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "GenNodSleepTime" INT 0 1000000;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 500;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","Event-based";
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","Event-based";
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 10;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "Yes","No";
+BA_DEF_ BO_  "GenMsgFastOnStart" INT 0 100;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 100;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 100;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 50000;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 1000000000;
+BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenMsgDLC" 8;
+BA_DEF_DEF_  "NmAsrCanMsgCycleTime" 640;
+BA_DEF_DEF_  "NmAsrBaseAddress" 1280;
+BA_DEF_DEF_  "NmNode" "no";
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "NmAsrCanMsgReducedTime" 0;
+BA_DEF_DEF_  "NmAsrCanMsgCycleOffset" 0;
+BA_DEF_DEF_  "NWM_WakeupAllowed" "Yes";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "GenNodSleepTime" 0;
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgFastOnStart" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 10;
+BA_DEF_DEF_  "GenMsgCycleTime" 100;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "MultiplexExtEnabled" "No";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "GenMsgSendType" BO_ 1024 0;
+BA_ "GenMsgCycleTime" BO_ 1024 75;
+BA_ "GenMsgStartDelayTime" BO_ 1024 23;
+BA_ "GenMsgDLC" BO_ 1024 8;
+BA_ "GenMsgSendType" BO_ 768 0;
+BA_ "GenMsgCycleTime" BO_ 768 50;
+BA_ "GenMsgStartDelayTime" BO_ 768 25;
+BA_ "GenMsgDLC" BO_ 768 8;
+BA_ "GenMsgSendType" BO_ 256 0;
+BA_ "GenMsgCycleTime" BO_ 256 100;
+BA_ "GenMsgStartDelayTime" BO_ 256 34;
+BA_ "GenMsgDLC" BO_ 256 8;
+BA_ "GenMsgSendType" BO_ 512 0;
+BA_ "GenMsgCycleTime" BO_ 512 120;
+BA_ "GenMsgStartDelayTime" BO_ 512 15;
+BA_ "GenMsgDLC" BO_ 512 8;
+BA_ "GenSigStartValue" SG_ 1024 BrakeSwitch2 0;
+BA_ "GenSigStartValue" SG_ 768 VehicleSpeed 0;
+BA_ "GenSigStartValue" SG_ 256 TargetSpeed 0;
+BA_ "GenSigStartValue" SG_ 256 BrakeDecelRequest 0;
+BA_ "GenSigStartValue" SG_ 256 ACCSTATE 0;
+BA_ "GenSigStartValue" SG_ 256 ACCDriverInformationMessage 0;
+BA_ "GenSigStartValue" SG_ 512 BrakeSwitch1 0;
+BA_ "GenSigStartValue" SG_ 512 CruiseSwitchRequest 0;
+VAL_ 1024 BrakeSwitch2 1 "Applied BrakeSwitch" 0 "Not Applied BrakeSwitch" ;
+VAL_ 256 BrakeDecelRequest 1 "Apply" 0 "Do not Apply" ;
+VAL_ 256 ACCSTATE 5 "Fault" 4 "DriverInterventionRequired" 3 "Standby" 2 "Active" 0 "OFF" ;
+VAL_ 256 ACCDriverInformationMessage 5 "Fault" 4 "DriverInterventionRequired" 3 "Standby" 2 "Active" 1 "On" 0 "OFF" ;
+VAL_ 512 BrakeSwitch1 1 "AppliedBrakeSwitch" 0 "NotAppliedBrakeSwitch" ;
+VAL_ 512 CruiseSwitchRequest 6 "Time Gap-" 5 "Time Gap+" 4 "Resume" 3 "Coast" 2 "SetAccel" 1 "ON" 0 "OFF" ;
+

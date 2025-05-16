@@ -1,0 +1,34 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+void MainTest ()
+{
+//  TC1();
+  ACC_OFF();
+}
+
+
+
+
+//testcase TC1()
+//{
+//  testCaseDescription("TC01 tests the state transition off to standby by setting the sysvar for onoff switch");
+//  testCaseTitle("TC01", "Test ACC off --> standby");
+//  @sysvar::ACC::On_Off = 1;
+//  testWaitForTimeout(500);
+//  testValidateSignalMatch("TS1", ACCSTATE, 3);
+//}
+
+testcase ACC_OFF()
+{
+  testCaseTitle ("ACC_OFF_2","ACC_OFF_1");
+  testValidateSignalMatch("ACC_OFF_3", ACCSTATE,0);
+}

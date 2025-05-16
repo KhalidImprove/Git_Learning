@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<tclibrary>
+  <testcase name="Speed_change" id="0" comment="" signature="" file="C:\Users\khali\Desktop\VTestStudio\TestUnit1\ACC_Testtable.vtt" SourceFilePersistencyGuid="hpftutnau4ns" IsPrivate="true" IsNetSignatureAndDefinedInExternalDll="true" guid="5f301c30-64a0-4471-a44a-dfc6802b8e08">
+    <parameter name="EU_Speed" type="int64" raw_type="int" />
+    <parameter name="Value_Number" type="int64" raw_type="int" />
+    <document_position><![CDATA[<XPathDocumentPosition xmlns:SerializedType="Vector.ITE.Document.XPathDocumentPosition"><XPath>/ttroot/ttlib[1]/tc_definitions[1]/tc_definition[1]/name[1]</XPath></XPathDocumentPosition>]]></document_position>
+    <implementation_language lang="TTE" />
+  </testcase>
+</tclibrary>

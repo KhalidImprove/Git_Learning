@@ -1,0 +1,88 @@
+﻿/*@!Encoding:65001*/
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  float Vf=70; 
+}
+
+on start
+{
+  $TargetSpeed = 25;
+}
+
+
+on signal_update BrakeSwitch1
+{
+  if ($BrakeSwitch1 == Applied && @CARPresence == No)
+  {
+     setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::Standby);
+     setSignal(BrakeDecelRequest , Apply);
+   //@sysvar::Braking::Brakelight = 1;
+  
+  }
+    else if ($BrakeSwitch1 == Applied && @CARPresence == Yes)
+  {
+//   setSignal(ACCSTATE,Standby);//  standby(3)
+      setSignal(BrakeDecelRequest , Apply);
+    // @Braking::Brakelight=1;
+  }
+  else
+   setSignal(BrakeDecelRequest,DoNotApply);
+  
+}
+
+
+
+on sysvar_update SpeedOfFowrdCar
+{
+  Vf = @sysvar::SpeedOfFowrdCar;
+}
+
+
+
+on sysvar sysvar::ACC::On_Off
+{
+  
+  if (@this.phys == sysvar::ACC::On_Off::On)
+    setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::Standby);
+  
+  else if (@this.phys == sysvar::ACC::On_Off::Off)
+    setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::OFF);
+  
+}
+
+on sysvar_update sysvar::TargetSpeed_Confirmed  
+{
+    if (@this.phys == Confirmed && $TargetSpeed >= 25 && @sysvar::ACC::On_Off == sysvar::ACC::On_Off::On && @sysvar::ACC::Fault==0)  //khalid //adding Systeme fault condition
+
+    setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::Active);
+  
+}
+ 
+
+on signal_update VehicleSpeed //khalid //ACC on Standby when Vehicle Speed<25
+{
+  if ($VehicleSpeed<25)
+     setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::Standby);
+}
+
+on sysvar_update ACC::SetSpeed  //Khalid // //ACC on Standby when Vehicle setSpeed<25
+{
+  if (@ACC::SetSpeed <25)
+     setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::Standby);
+}
+
+on sysvar_update sysvar::ACC::Fault  //Khalid //System Fault detection
+{
+  if(($VehicleSpeed<25 ||sysvar::ACC::On_Off::Off) && $ACCSTATE==2)
+  { 
+    @this.phys = 1;
+  }
+  else if (@ACC::Fault==1)
+     setSignal(ACCSTATE, ACC_db::VtSig_ACCSTATE::Standby);  //ACC on standby if Sys fault detected 
+}

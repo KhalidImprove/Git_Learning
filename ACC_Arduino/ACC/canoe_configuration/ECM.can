@@ -1,0 +1,27 @@
+﻿/*@!Encoding:65001*/
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  float mynewspeed;
+  
+}
+
+on message ACC_info
+{
+  mynewspeed = this.TargetSpeed;
+  
+}
+//by ranim
+on sysvar sysvar::Braking::BrakeSwitch2
+{
+  if(@this.phys== 1)
+  {
+    setSignal(BrakeSwitch2, 1);
+  }
+}
+

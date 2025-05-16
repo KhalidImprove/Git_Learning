@@ -1,0 +1,54 @@
+﻿/*@!Encoding:65001*/
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+on start
+{
+  $TargetSpeed = 30;
+  @ACC::Set_Target_Speed =30;
+  $SetTargetSpeed=30;
+}
+
+on sysvar sysvar::ACC::On_Off
+{
+  
+  if (@this.phys == sysvar::ACC::On_Off::On)
+    setSignal(ON_OFF, ACC_db::VtSig_ON_OFF::On);
+  
+  else if (@this.phys == sysvar::ACC::On_Off::Off)
+    setSignal(ON_OFF, ACC_db::VtSig_ON_OFF::OFF);
+  
+}
+
+on sysvar sysvar::TargetSpeed_Confirmed
+{
+    if (@this.phys == Confirmed){
+
+    setSignal(TargetSpeed_Confirmed, ACC_db::VtSig_TargetSpeed_Confirmed::T_Confirmed);
+    }
+    
+  else if (@this.phys == NotConfirmed){
+    setSignal(TargetSpeed_Confirmed, ACC_db::VtSig_TargetSpeed_Confirmed::T_NotConfirmed);
+  }
+}
+
+On sysvar ACC::Set_Target_Speed
+{
+   setSignal(TargetSpeed, @ACC::Set_Target_Speed);
+   setSignal(SetTargetSpeed, @ACC::Set_Target_Speed);
+}
+
+on sysvar_update sysvar::ACC::Fault  //Khalid //System Fault detection
+{
+  if(@ACC::Fault==1)
+  { 
+    setSignal(Fault, 1);
+  }
+  else if (@ACC::Fault==0)
+     setSignal(Fault, 0); 
+}
+  
+

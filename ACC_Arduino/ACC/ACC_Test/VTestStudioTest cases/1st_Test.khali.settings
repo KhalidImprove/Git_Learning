@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <ProductVersion>9.5.16.0</ProductVersion>
+  <Project>
+    <SerializableDictionaryOfStringObject>
+      <item>
+        <key type="System.String">
+          <string>CANoeConfigPathSutImport</string>
+        </key>
+        <value type="System.String">
+          <string>C:\Users\khali\Desktop\Github_ACC\ACC\canoe_configuration\ACC.cfg</string>
+        </value>
+      </item>
+    </SerializableDictionaryOfStringObject>
+  </Project>
+  <WindowManagement>
+    <SerializableDictionaryOfStringObject>
+      <item>
+        <key type="System.String">
+          <string>ViewSettings</string>
+        </key>
+        <value type="System.Collections.Generic.List`1[Vector.ITE.ViewInterfaces.ViewSettings]">
+          <ArrayOfViewSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ViewSettings>
+              <Key>Path_.\TestUnit1\ACC_Testtable.vtt</Key>
+              <LastTouched>2025-05-15T10:45:54.2471351Z</LastTouched>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>EditorSettings</string>
+                  </key>
+                  <value type="Vector.ITE.TestTable.Editor.TtEditorSettings">
+                    <TtEditorSettings>
+                      <SplitterSettingsTet>
+                        <SplitPosition>232</SplitPosition>
+                        <Expanded>true</Expanded>
+                      </SplitterSettingsTet>
+                      <SplitterSettingsPv>
+                        <SplitPosition>400</SplitPosition>
+                        <Expanded>true</Expanded>
+                      </SplitterSettingsPv>
+                      <SplitterSettingsLv>
+                        <SplitPosition>150</SplitPosition>
+                        <Expanded>true</Expanded>
+                      </SplitterSettingsLv>
+                      <ActiveView>4</ActiveView>
+                    </TtEditorSettings>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>ParameterViewSettings</string>
+                  </key>
+                  <value type="Vector.ITE.TestTable.Editor.ParameterView.TtParameterViewSettings">
+                    <TtParameterViewSettings>
+                      <CellSizes>
+                        <item>
+                          <key type="System.String">
+                            <string>#2305C0CF</string>
+                          </key>
+                          <value type="System.Int32[]">
+                            <ArrayOfInt>
+                              <int>300</int>
+                              <int>65</int>
+                              <int>94</int>
+                            </ArrayOfInt>
+                          </value>
+                        </item>
+                        <item>
+                          <key type="System.String">
+                            <string>#36E856F9</string>
+                          </key>
+                          <value type="System.Int32[]">
+                            <ArrayOfInt>
+                              <int>60</int>
+                              <int>10</int>
+                            </ArrayOfInt>
+                          </value>
+                        </item>
+                        <item>
+                          <key type="System.String">
+                            <string>2</string>
+                          </key>
+                          <value type="System.Int32[]">
+                            <ArrayOfInt>
+                              <int>15</int>
+                              <int>15</int>
+                            </ArrayOfInt>
+                          </value>
+                        </item>
+                        <item>
+                          <key type="System.String">
+                            <string>#46598A6E</string>
+                          </key>
+                          <value type="System.Int32[]">
+                            <ArrayOfInt>
+                              <int>60</int>
+                              <int>30</int>
+                            </ArrayOfInt>
+                          </value>
+                        </item>
+                      </CellSizes>
+                    </TtParameterViewSettings>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>TestExecutionTreeSettings</string>
+                  </key>
+                  <value type="Vector.ITE.TestTable.Editor.TestExecutionTree.TtTetSettings">
+                    <TtTetSettings>
+                      <TreeListSettings>
+                        <TreeListColumnSettings>
+                          <TtTreeListColumnSettings>
+                            <Width>100</Width>
+                            <VisibleIndex>0</VisibleIndex>
+                          </TtTreeListColumnSettings>
+                        </TreeListColumnSettings>
+                      </TreeListSettings>
+                    </TtTetSettings>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>LibraryViewSettings</string>
+                  </key>
+                  <value type="Vector.ITE.TestTable.Editor.LibraryView.TtLvSettings">
+                    <TtLvSettings>
+                      <TreeListSettings>
+                        <TreeListColumnSettings>
+                          <TtTreeListColumnSettings>
+                            <Width>100</Width>
+                            <VisibleIndex>0</VisibleIndex>
+                          </TtTreeListColumnSettings>
+                        </TreeListColumnSettings>
+                      </TreeListSettings>
+                    </TtLvSettings>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>CommandViewSettings</string>
+                  </key>
+                  <value type="Vector.ITE.TestTable.Editor.CommandView.TtCvSettings">
+                    <TtCvSettings>
+                      <TreeListSettings>
+                        <TreeListColumnSettings>
+                          <TtTreeListColumnSettings>
+                            <Width>300</Width>
+                            <VisibleIndex>0</VisibleIndex>
+                          </TtTreeListColumnSettings>
+                          <TtTreeListColumnSettings>
+                            <Width>300</Width>
+                            <VisibleIndex>1</VisibleIndex>
+                          </TtTreeListColumnSettings>
+                        </TreeListColumnSettings>
+                      </TreeListSettings>
+                      <RootNodeId>:0</RootNodeId>
+                      <MruList>
+                        <TtCustomPopupListItemData>
+                          <ItemText>Wait</ItemText>
+                          <ImageIndex>181</ImageIndex>
+                          <ModelElementName>wait</ModelElementName>
+                          <CheckHandle />
+                          <SignatureName />
+                          <ClassName />
+                          <DataTypeList />
+                        </TtCustomPopupListItemData>
+                        <TtCustomPopupListItemData>
+                          <ItemText>Check</ItemText>
+                          <ImageIndex>181</ImageIndex>
+                          <ModelElementName>statecheck</ModelElementName>
+                          <CheckHandle />
+                          <SignatureName />
+                          <ClassName />
+                          <DataTypeList />
+                        </TtCustomPopupListItemData>
+                        <TtCustomPopupListItemData>
+                          <ItemText>Set</ItemText>
+                          <ImageIndex>181</ImageIndex>
+                          <ModelElementName>set</ModelElementName>
+                          <CheckHandle />
+                          <SignatureName />
+                          <ClassName />
+                          <DataTypeList />
+                        </TtCustomPopupListItemData>
+                        <TtCustomPopupListItemData>
+                          <ItemText>Await Value Match</ItemText>
+                          <ImageIndex>181</ImageIndex>
+                          <ModelElementName>awaitvaluematch</ModelElementName>
+                          <CheckHandle />
+                          <SignatureName />
+                          <ClassName />
+                          <DataTypeList />
+                        </TtCustomPopupListItemData>
+                        <TtCustomPopupListItemData>
+                          <ItemText>Test Case</ItemText>
+                          <ImageIndex>177</ImageIndex>
+                          <ModelElementName>tc</ModelElementName>
+                          <CheckHandle />
+                          <SignatureName />
+                          <ClassName />
+                          <DataTypeList />
+                        </TtCustomPopupListItemData>
+                      </MruList>
+                    </TtCvSettings>
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+            <ViewSettings>
+              <Key>ProjectConfiguration</Key>
+              <LastTouched>2025-05-15T10:45:54.6289484Z</LastTouched>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>SelectedTabPage</string>
+                  </key>
+                  <value type="Vector.ITE.Document.EProjectConfigurationTabPage">
+                    <EProjectConfigurationTabPage>SutEnvironment</EProjectConfigurationTabPage>
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+            <ViewSettings>
+              <Key>SymbolExplorer</Key>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>State</string>
+                  </key>
+                  <value type="System.String">
+                    <string>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;SymbolSelectionProperties xmlns:i="http://www.w3.org/2001/XMLSchema-instance"&gt;
+&lt;AreDiagQualifiersShown&gt;false&lt;/AreDiagQualifiersShown&gt;
+&lt;CurrentViewId&gt;NetworkSymbols&lt;/CurrentViewId&gt;
+&lt;SearchProperties&gt;
+&lt;SearchTermHistory /&gt;
+&lt;/SearchProperties&gt;
+&lt;ViewProperties&gt;
+&lt;ViewProperties&gt;
+&lt;ColumnsProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;0&lt;/Position&gt;
+&lt;Sorting&gt;Ascending&lt;/Sorting&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;2&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;3&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;4&lt;/Position&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;/ColumnsProperties&gt;
+&lt;Key&gt;Embedded/NetworkSymbols&lt;/Key&gt;
+&lt;NodeTreeProperties&gt;
+&lt;NodeProperties&gt;
+&lt;NodeKey&gt;{RootSymbolItem/ACC_db{VNetworkItem/{SignalGroupItem&lt;/NodeKey&gt;
+&lt;/NodeProperties&gt;
+&lt;/NodeTreeProperties&gt;
+&lt;/ViewProperties&gt;
+&lt;ViewProperties&gt;
+&lt;ColumnsProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;0&lt;/Position&gt;
+&lt;Sorting&gt;Ascending&lt;/Sorting&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;2&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;3&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;4&lt;/Position&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;/ColumnsProperties&gt;
+&lt;Key&gt;Embedded/&lt;/Key&gt;
+&lt;NodeTreeProperties /&gt;
+&lt;/ViewProperties&gt;
+&lt;ViewProperties&gt;
+&lt;ColumnsProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;0&lt;/Position&gt;
+&lt;Sorting&gt;Ascending&lt;/Sorting&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;2&lt;/Position&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;3&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;/ColumnsProperties&gt;
+&lt;Key&gt;Embedded/VariableSymbols&lt;/Key&gt;
+&lt;NodeTreeProperties&gt;
+&lt;NodeProperties&gt;
+&lt;NodeKey&gt;{RootSymbolItem/{SysVarGroupItem/ACC&lt;/NodeKey&gt;
+&lt;/NodeProperties&gt;
+&lt;/NodeTreeProperties&gt;
+&lt;/ViewProperties&gt;
+&lt;ViewProperties&gt;
+&lt;ColumnsProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;0&lt;/Position&gt;
+&lt;Sorting&gt;Ascending&lt;/Sorting&gt;
+&lt;Width&gt;199&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;200&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;IsVisible&gt;true&lt;/IsVisible&gt;
+&lt;Position&gt;1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;ColumnProperties&gt;
+&lt;Position&gt;-1&lt;/Position&gt;
+&lt;Width&gt;100&lt;/Width&gt;
+&lt;/ColumnProperties&gt;
+&lt;/ColumnsProperties&gt;
+&lt;Key&gt;Embedded/ParameterSymbols&lt;/Key&gt;
+&lt;NodeTreeProperties&gt;
+&lt;NodeProperties&gt;
+&lt;NodeKey&gt;{RootSymbolItem/{ParameterRootItem&lt;/NodeKey&gt;
+&lt;/NodeProperties&gt;
+&lt;NodeProperties&gt;
+&lt;NodeKey&gt;{RootSymbolItem/{CtrlVarRootItem&lt;/NodeKey&gt;
+&lt;/NodeProperties&gt;
+&lt;/NodeTreeProperties&gt;
+&lt;/ViewProperties&gt;
+&lt;/ViewProperties&gt;
+&lt;/SymbolSelectionProperties&gt;</string>
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+            <ViewSettings>
+              <Key>TraceItemExplorer</Key>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>TraceItems_TopIndex</string>
+                  </key>
+                  <value type="System.Int32">
+                    <int>0</int>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>TraceItems_Focused</string>
+                  </key>
+                  <value type="null" />
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>TraceItems_Selected</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType />
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>TraceItems_Expanded</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType />
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+            <ViewSettings>
+              <Key>HomeDirectoryView</Key>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>HomeDirectoryView_TopIndex</string>
+                  </key>
+                  <value type="System.Int32">
+                    <int>0</int>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>HomeDirectoryView_Focused</string>
+                  </key>
+                  <value type="System.String">
+                    <string>VTestStudioTest cases/VTestStudioTest cases</string>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>HomeDirectoryView_Selected</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType />
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>HomeDirectoryView_Expanded</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType>
+                      <anyType xsi:type="xsd:string">VTestStudioTest cases/VTestStudioTest cases</anyType>
+                    </ArrayOfAnyType>
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+            <ViewSettings>
+              <Key>LibraryView</Key>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>LibraryView_TopIndex</string>
+                  </key>
+                  <value type="System.Int32">
+                    <int>0</int>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>LibraryView_Focused</string>
+                  </key>
+                  <value type="null" />
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>LibraryView_Selected</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType />
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>LibraryView_Expanded</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType />
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+            <ViewSettings>
+              <Key>ProjectView</Key>
+              <Settings>
+                <item>
+                  <key type="System.String">
+                    <string>ProjectView_TopIndex</string>
+                  </key>
+                  <value type="System.Int32">
+                    <int>0</int>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>ProjectView_Focused</string>
+                  </key>
+                  <value type="System.String">
+                    <string>VTestStudioTest cases/ProjectRoot</string>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>ProjectView_Selected</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType>
+                      <anyType xsi:type="xsd:string">VTestStudioTest cases/ProjectRoot</anyType>
+                    </ArrayOfAnyType>
+                  </value>
+                </item>
+                <item>
+                  <key type="System.String">
+                    <string>ProjectView_Expanded</string>
+                  </key>
+                  <value type="System.Collections.ArrayList">
+                    <ArrayOfAnyType>
+                      <anyType xsi:type="xsd:string">VTestStudioTest cases/ProjectRoot</anyType>
+                      <anyType xsi:type="xsd:string">VTestStudioTest cases/ProjectRoot/Test Units/TestUnit1</anyType>
+                    </ArrayOfAnyType>
+                  </value>
+                </item>
+              </Settings>
+            </ViewSettings>
+          </ArrayOfViewSettings>
+        </value>
+      </item>
+      <item>
+        <key type="System.String">
+          <string>ActiveDocumentIndex</string>
+        </key>
+        <value type="System.Int32">
+          <int>0</int>
+        </value>
+      </item>
+      <item>
+        <key type="System.String">
+          <string>DocumentLayout</string>
+        </key>
+        <value type="Vector.ITE.ViewManagement.DocInfoList">
+          <ArrayOfDocumentInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DocumentInfo>
+              <PositionInContainer>0</PositionInContainer>
+              <ContainerIndex>0</ContainerIndex>
+              <DocType>TTTestModule</DocType>
+              <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestUnit1\ACC_Testtable.vtt" /&gt;</SerializedBasedFileName>
+              <ContextGUID>sc72q2fgq1q1</ContextGUID>
+              <ContextGUIDForGUI>sc72q2fgq1q1</ContextGUIDForGUI>
+            </DocumentInfo>
+            <DocumentInfo>
+              <PositionInContainer>1</PositionInContainer>
+              <ContainerIndex>0</ContainerIndex>
+              <DocType>ProjectConfiguration</DocType>
+              <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="" /&gt;</SerializedBasedFileName>
+              <ContextGUID />
+              <ContextGUIDForGUI />
+            </DocumentInfo>
+          </ArrayOfDocumentInfo>
+        </value>
+      </item>
+      <item>
+        <key type="System.String">
+          <string>WindowLayout</string>
+        </key>
+        <value type="System.String">
+          <string>&lt;DockSiteLayout xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SerializationFormat="All" Version="2"&gt;
+	&lt;AutoHideHost /&gt;
+	&lt;Content xsi:type="SplitContainer" Orientation="Horizontal" DockedSize="1908.4,845.2"&gt;
+		&lt;UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="208,600"&gt;
+			&lt;UIElement xsi:type="ToolWindowContainer" DockedSize="208,407" SelectedWindowUniqueId="80d3d55f-464d-44bb-8ea2-fa78f6b2e89b"&gt;
+				&lt;UIElement xsi:type="ToolWindowRef" UniqueId="80d3d55f-464d-44bb-8ea2-fa78f6b2e89b" /&gt;
+			&lt;/UIElement&gt;
+			&lt;UIElement xsi:type="ToolWindowContainer" DockedSize="208,266" SelectedWindowUniqueId="0ce8c2bf-4325-402d-8ebc-52ba6d40ccf2"&gt;
+				&lt;UIElement xsi:type="ToolWindowRef" UniqueId="284e2df0-0932-4854-9bf2-dbb96b34796a" /&gt;
+				&lt;UIElement xsi:type="ToolWindowRef" UniqueId="0ce8c2bf-4325-402d-8ebc-52ba6d40ccf2" /&gt;
+			&lt;/UIElement&gt;
+		&lt;/UIElement&gt;
+		&lt;UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="1455,400"&gt;
+			&lt;UIElement xsi:type="Workspace"&gt;
+				&lt;Content xsi:type="TabbedMdiHost"&gt;
+					&lt;Content xsi:type="TabbedMdiContainer" DockedSize="1455,845" SelectedWindowUniqueId="8b8e4789-a342-4009-9262-be8ca08bbc54"&gt;
+						&lt;UIElement xsi:type="DocumentWindowRef" UniqueId="8b8e4789-a342-4009-9262-be8ca08bbc54" /&gt;
+						&lt;UIElement xsi:type="DocumentWindowRef" UniqueId="fa1968f1-f778-4e2c-b3d5-8cb16fd5eba3" /&gt;
+					&lt;/Content&gt;
+				&lt;/Content&gt;
+			&lt;/UIElement&gt;
+			&lt;UIElement xsi:type="ToolWindowContainer" DockedSize="1455,174" SelectedWindowUniqueId="b0825994-7121-418f-bf5b-233d0dedd923"&gt;
+				&lt;UIElement xsi:type="ToolWindowRef" UniqueId="b0825994-7121-418f-bf5b-233d0dedd923" /&gt;
+				&lt;UIElement xsi:type="ToolWindowRef" UniqueId="b703a70f-aa52-477d-96fe-1c8fb52528f1" /&gt;
+			&lt;/UIElement&gt;
+		&lt;/UIElement&gt;
+		&lt;UIElement xsi:type="ToolWindowContainer" DockedSize="233,200" SelectedWindowUniqueId="6ac6e7cf-52c3-491e-8377-5b5c951e99f5"&gt;
+			&lt;UIElement xsi:type="ToolWindowRef" UniqueId="6ac6e7cf-52c3-491e-8377-5b5c951e99f5" /&gt;
+			&lt;UIElement xsi:type="ToolWindowRef" UniqueId="c6ddf369-eb82-4a69-9937-df3f2de48fcc" /&gt;
+			&lt;UIElement xsi:type="ToolWindowRef" UniqueId="792c075c-8ac2-4c17-94e9-8809753bdf66" /&gt;
+		&lt;/UIElement&gt;
+	&lt;/Content&gt;
+	&lt;DocumentWindows&gt;
+		&lt;DocumentWindow UniqueId="8b8e4789-a342-4009-9262-be8ca08bbc54" SerializationId="TtEditor:C:\Users\khali\Desktop\Github_ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt" ContainerDockedSize="1455,845" IsOpen="true" LastActiveDateTime="2025-05-15T09:28:09.5775882+02:00" State="Document" /&gt;
+		&lt;DocumentWindow UniqueId="fa1968f1-f778-4e2c-b3d5-8cb16fd5eba3" SerializationId="ProjectSettingsEditor" ContainerDockedSize="1455,845" IsOpen="true" LastActiveDateTime="2025-05-15T09:28:09.3508742+02:00" State="Document" /&gt;
+	&lt;/DocumentWindows&gt;
+	&lt;RaftingHosts&gt;
+		&lt;RaftingHost UniqueId="d0bc595c-8920-4f48-a45a-bd3802886642" Location="219,530" Size="211,678" WindowState="Normal"&gt;
+			&lt;AutoHideHost /&gt;
+			&lt;Content xsi:type="ToolWindowContainer" DockedSize="0,0"&gt;
+				&lt;UIElement xsi:type="Track" ContainerDockedSize="211,676" CreationDateTime="0001-01-01T00:00:00" UniqueId="80d3d55f-464d-44bb-8ea2-fa78f6b2e89b" /&gt;
+			&lt;/Content&gt;
+		&lt;/RaftingHost&gt;
+		&lt;RaftingHost UniqueId="4830289f-d188-465e-88d0-b26ca869e692" Location="238,475" Size="211,407" WindowState="Normal"&gt;
+			&lt;AutoHideHost /&gt;
+			&lt;Content xsi:type="ToolWindowContainer" DockedSize="0,0"&gt;
+				&lt;UIElement xsi:type="Track" ContainerDockedSize="211,439" CreationDateTime="0001-01-01T00:00:00" UniqueId="0ce8c2bf-4325-402d-8ebc-52ba6d40ccf2" /&gt;
+			&lt;/Content&gt;
+		&lt;/RaftingHost&gt;
+	&lt;/RaftingHosts&gt;
+	&lt;ToolWindows&gt;
+		&lt;ToolWindow UniqueId="80d3d55f-464d-44bb-8ea2-fa78f6b2e89b" SerializationId="ProjectView" ContainerDockedSize="208,407" IsOpen="true" LastActiveDateTime="2025-05-02T11:49:23.223503+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="284e2df0-0932-4854-9bf2-dbb96b34796a" SerializationId="LibraryView" ContainerDockedSize="208,266" IsOpen="true" LastActiveDateTime="2025-04-15T15:59:27.76117+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="0ce8c2bf-4325-402d-8ebc-52ba6d40ccf2" SerializationId="HomeDirectoryView" ContainerDockedSize="208,266" IsOpen="true" LastActiveDateTime="2025-04-23T15:57:13.2264164+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="b0825994-7121-418f-bf5b-233d0dedd923" SerializationId="OutputService" ContainerDockedSize="1455,174" IsOpen="true" LastActiveDateTime="2025-05-13T16:09:14.1183232+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="b703a70f-aa52-477d-96fe-1c8fb52528f1" SerializationId="FindResults1" ContainerDockedSize="1455,174" IsOpen="true" LastActiveDateTime="2025-04-15T15:58:52.4682614+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="273e697c-d09c-47e6-9cf8-19391a67d987" SerializationId="CaplFunctionExplorer" ContainerDockedSize="211,676" IsOpen="false" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="6ac6e7cf-52c3-491e-8377-5b5c951e99f5" SerializationId="SymbolExplorer" ContainerDockedSize="233,200" IsOpen="true" LastActiveDateTime="2025-05-13T16:50:55.1168715+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="c6ddf369-eb82-4a69-9937-df3f2de48fcc" SerializationId="InterfaceFunctionExplorer" ContainerDockedSize="233,200" IsOpen="true" LastActiveDateTime="2025-04-23T15:55:44.620379+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="792c075c-8ac2-4c17-94e9-8809753bdf66" SerializationId="TteLanguageExplorer" ContainerDockedSize="233,200" IsOpen="true" LastActiveDateTime="2025-04-25T08:47:43.2344225+02:00" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="72257bb0-24fb-4c42-b42a-d7666b985d2e" SerializationId="TraceItemExplorer" ContainerDockedSize="250,676" IsOpen="false" State="Docked" /&gt;
+		&lt;ToolWindow UniqueId="ec848507-ef50-46f3-a8d4-be1c443ceaaa" SerializationId="SearchAndReplaceDialog" ContainerDockedSize="305,288" IsOpen="false" State="Docked" /&gt;
+	&lt;/ToolWindows&gt;
+&lt;/DockSiteLayout&gt;</string>
+        </value>
+      </item>
+    </SerializableDictionaryOfStringObject>
+  </WindowManagement>
+  <DocumentManagement>
+    <SerializableDictionaryOfStringObject />
+  </DocumentManagement>
+  <BookmarkService>
+    <SerializableDictionaryOfStringObject />
+  </BookmarkService>
+  <SearchAndReplace>
+    <SerializableDictionaryOfStringObject />
+  </SearchAndReplace>
+  <FunctionExplorer>
+    <SerializableDictionaryOfStringObject />
+  </FunctionExplorer>
+  <TempFileRepository>
+    <SerializableDictionaryOfStringObject />
+  </TempFileRepository>
+  <TestTableEditor>
+    <SerializableDictionaryOfStringObject>
+      <item>
+        <key type="System.String">
+          <string>TtRUList</string>
+        </key>
+        <value type="System.Collections.Generic.List`1[System.String]">
+          <ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <string>ValueTableEntry#Yes</string>
+            <string>ValueTableEntry#Apply</string>
+            <string>ValueTableEntry#eu</string>
+            <string>ValueTableEntry#NotApplied</string>
+            <string>ValueTableEntry#Confirmed</string>
+            <string>ValueTableEntry#Applied</string>
+            <string>ValueTableEntry#AppliedBrakeSwitch</string>
+            <string>ValueTableEntry#On</string>
+            <string>ValueTableEntry#No</string>
+            <string>ValueTableEntry#NotAppliedBrakeSwitch</string>
+            <string>ValueTableEntry#NotConfirmed</string>
+            <string>ValueTableEntry#Off</string>
+            <string>ValueTableEntry#OFF</string>
+            <string>ConfiguredObject#SysVar_BEGIN_OF_OBJECT|1|Fault|ACC|-1|0|END_OF_OBJECT_SysVar|</string>
+            <string>ValueTableEntry#Active</string>
+            <string>ConfiguredObject#DBSignal_BEGIN_OF_OBJECT|1|NodeOrFrameData_BEGIN_OF_OBJECT|1|1|CAN|1|ACC_db|ACC_Sys_Variables|END_OF_OBJECT_NodeOrFrameData|FrameData_BEGIN_OF_OBJECT|1|255|255|0|0|ACC_Sys_Variables|1280|False|END_OF_OBJECT_FrameData|Fault|1|END_OF_OBJECT_|</string>
+            <string>ValueTableEntry#Fault_detected</string>
+            <string>ConfiguredObject#DBSignal_BEGIN_OF_OBJECT|1|NodeOrFrameData_BEGIN_OF_OBJECT|1|1|CAN|1|ACC_db|ACC|END_OF_OBJECT_NodeOrFrameData|FrameData_BEGIN_OF_OBJECT|1|255|255|0|0|ACC_info|256|False|END_OF_OBJECT_FrameData|ACCSTATE|1|END_OF_OBJECT_|</string>
+            <string>ValueTableEntry#Standby</string>
+          </ArrayOfString>
+        </value>
+      </item>
+    </SerializableDictionaryOfStringObject>
+  </TestTableEditor>
+  <TestSequenceDiagram>
+    <SerializableDictionaryOfStringObject />
+  </TestSequenceDiagram>
+  <LanguagesCommon>
+    <SerializableDictionaryOfStringObject />
+  </LanguagesCommon>
+  <InterfaceFunctionExplorer>
+    <SerializableDictionaryOfStringObject />
+  </InterfaceFunctionExplorer>
+  <ITETester>
+    <SerializableDictionaryOfStringObject />
+  </ITETester>
+  <MeasurePerformance>
+    <SerializableDictionaryOfStringObject />
+  </MeasurePerformance>
+  <TraceItems>
+    <SerializableDictionaryOfStringObject />
+  </TraceItems>
+  <IntelliSymbolManagement>
+    <SerializableDictionaryOfStringObject />
+  </IntelliSymbolManagement>
+  <PrintDialog>
+    <SerializableDictionaryOfStringObject />
+  </PrintDialog>
+  <TestCaseIDGeneration>
+    <SerializableDictionaryOfStringObject />
+  </TestCaseIDGeneration>
+  <StateChartDiagram>
+    <SerializableDictionaryOfStringObject />
+  </StateChartDiagram>
+  <TcAttributesPropagation>
+    <SerializableDictionaryOfStringObject />
+  </TcAttributesPropagation>
+  <WaveformEditor>
+    <SerializableDictionaryOfStringObject />
+  </WaveformEditor>
+  <Application>
+    <SerializableDictionaryOfStringObject />
+  </Application>
+</Settings>

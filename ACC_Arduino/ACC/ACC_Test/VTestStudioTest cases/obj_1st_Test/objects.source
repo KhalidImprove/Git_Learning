@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TempFileMetainfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/Vector.ITE.TempFileRepository.MetainfoModel">
+  <FileFormatVersion xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework">1</FileFormatVersion>
+  <TempFileMetainfo xmlns:d2p1="http://schemas.datacontract.org/2004/07/Vector.ITE.TempFileRepository.MetainfoModel.Entities" z:Id="2">
+    <_p z:Ref="1" i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework" />
+    <d2p1:FileSources z:Id="3">
+      <Content z:Id="4" z:Size="15" xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework">
+        <d2p1:FileSource z:Id="5" i:type="d2p1:CrcBasedFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Id="6">9.5.16.0</d2p1:AppVersion>
+          <d2p1:Extension z:Id="7">.</d2p1:Extension>
+          <d2p1:GeneratedFileModificationTime>2025-05-13T15:19:22.4976817+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>71</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="8">760edq5pld6e-TSV</d2p1:PersistencyKey>
+          <d2p1:Crc>2380691147</d2p1:Crc>
+          <d2p1:SourceFile z:Id="9">C:\Users\khali\Desktop\Github_ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\1st_Test.vtsoproj</d2p1:SourceFile>
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="10" i:type="d2p1:MultiFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="6" i:nil="true" />
+          <d2p1:Extension z:Ref="7" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-13T15:19:22.5142127+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>74</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="11">760edq5pld6e-MTSV</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescriptions z:Id="12">
+            <Content z:Id="13" z:Size="1">
+              <d2p1:FileSourceDescription z:Id="14">
+                <_p z:Ref="12" i:nil="true" />
+                <d2p1:FullFilePath z:Id="15">C:\Users\khali\Desktop\Github_ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\760edq5pld6e-TSV.</d2p1:FullFilePath>
+                <d2p1:SourceModificationTime>2025-05-13T15:19:22.4976817+02:00</d2p1:SourceModificationTime>
+              </d2p1:FileSourceDescription>
+            </Content>
+            <_p z:Ref="10" i:nil="true" />
+          </d2p1:FileSourceDescriptions>
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="16" i:type="d2p1:SimpleFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Id="17"></d2p1:AppVersion>
+          <d2p1:Extension z:Ref="7" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>0001-01-01T00:00:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>-1</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="18">760edq5pld6e#SV</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescription i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="19" i:type="d2p1:CrcBasedFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="6" i:nil="true" />
+          <d2p1:Extension z:Id="20">.vvarprop</d2p1:Extension>
+          <d2p1:GeneratedFileModificationTime>2025-05-02T11:30:55.9099015+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>1319</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="21">TU_Indep=VP</d2p1:PersistencyKey>
+          <d2p1:Crc>2814089433</d2p1:Crc>
+          <d2p1:SourceFile z:Ref="17" i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="22" i:type="d2p1:SimpleFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="17" i:nil="true" />
+          <d2p1:Extension z:Ref="7" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-02T11:55:34.0728222+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>-1</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="23">sbu8b2t3me9i#SV</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescription i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="24" i:type="d2p1:DatabaseTlbFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="17" i:nil="true" />
+          <d2p1:Extension z:Ref="7" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>0001-01-01T00:00:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>-1</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="25">72ujh9v94din#DB</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescription i:nil="true" />
+          <d2p1:IgnoredNodes z:Ref="17" i:nil="true" />
+          <d2p1:NamespaceMode>0</d2p1:NamespaceMode>
+          <d2p1:Networks xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="26" z:Size="0" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="27" i:type="d2p1:CrcBasedFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="6" i:nil="true" />
+          <d2p1:Extension z:Ref="7" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-04-23T10:37:55.5852311+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>2560</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="28">9ejtegjkdaem#NW</d2p1:PersistencyKey>
+          <d2p1:Crc>4129466110</d2p1:Crc>
+          <d2p1:SourceFile z:Ref="17" i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="29" i:type="d2p1:CrcBasedFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="6" i:nil="true" />
+          <d2p1:Extension z:Ref="20" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-02T11:30:55.9594111+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>1318</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="30">sc72q2fgq1q1=VP</d2p1:PersistencyKey>
+          <d2p1:Crc>4004886084</d2p1:Crc>
+          <d2p1:SourceFile z:Ref="17" i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="31" i:type="d2p1:MultiFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="6" i:nil="true" />
+          <d2p1:Extension z:Ref="7" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-13T15:19:23.0693225+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>828</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="32">sc72q2fgq1q1~3-0</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescriptions z:Id="33">
+            <Content z:Id="34" z:Size="1">
+              <d2p1:FileSourceDescription z:Id="35">
+                <_p z:Ref="33" i:nil="true" />
+                <d2p1:FullFilePath z:Id="36">C:\Users\khali\Desktop\Github_ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt</d2p1:FullFilePath>
+                <d2p1:SourceModificationTime>2025-05-15T11:01:02.1709064+02:00</d2p1:SourceModificationTime>
+              </d2p1:FileSourceDescription>
+            </Content>
+            <_p z:Ref="31" i:nil="true" />
+          </d2p1:FileSourceDescriptions>
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="37" i:type="d2p1:SimpleFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Id="38">9.5.16.0</d2p1:AppVersion>
+          <d2p1:Extension z:Id="39">.vparam</d2p1:Extension>
+          <d2p1:GeneratedFileModificationTime>2025-05-13T15:19:21.7981816+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>343</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="40">mfdbfi9htuie</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescription z:Id="41">
+            <_p z:Ref="37" i:nil="true" />
+            <d2p1:FullFilePath z:Id="42">C:\Users\khali\Desktop\Github_ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\Parameter.vparam</d2p1:FullFilePath>
+            <d2p1:SourceModificationTime>2025-04-29T15:01:08.9400292+02:00</d2p1:SourceModificationTime>
+          </d2p1:FileSourceDescription>
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="43" i:type="d2p1:MultiFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="38" i:nil="true" />
+          <d2p1:Extension z:Id="44">.</d2p1:Extension>
+          <d2p1:GeneratedFileModificationTime>2025-04-29T13:02:41.1741405+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>60</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="45">sc72q2fgq1q1~0-0</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescriptions z:Id="46">
+            <Content z:Id="47" z:Size="1">
+              <d2p1:FileSourceDescription z:Id="48">
+                <_p z:Ref="46" i:nil="true" />
+                <d2p1:FullFilePath z:Id="49">C:\Users\khali\Desktop\Github_ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_CAPL_VTstudio.can</d2p1:FullFilePath>
+                <d2p1:SourceModificationTime>2025-04-29T13:05:11.9010404+02:00</d2p1:SourceModificationTime>
+              </d2p1:FileSourceDescription>
+            </Content>
+            <_p z:Ref="43" i:nil="true" />
+          </d2p1:FileSourceDescriptions>
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="50" i:type="d2p1:DatabaseTlbFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="17" i:nil="true" />
+          <d2p1:Extension z:Id="51">.</d2p1:Extension>
+          <d2p1:GeneratedFileModificationTime>0001-01-01T00:00:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>-1</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="52">5l2ugvhe9vc7#DB</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescription i:nil="true" />
+          <d2p1:IgnoredNodes z:Ref="17" i:nil="true" />
+          <d2p1:NamespaceMode>0</d2p1:NamespaceMode>
+          <d2p1:Networks xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="53" z:Size="0" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="54" i:type="d2p1:CrcBasedFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Id="55">9.5.16.0</d2p1:AppVersion>
+          <d2p1:Extension z:Ref="51" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-13T15:19:22.5287251+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>113507</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="56">sbu8b2t3me9i-CSV</d2p1:PersistencyKey>
+          <d2p1:Crc>2900713644</d2p1:Crc>
+          <d2p1:SourceFile z:Ref="9" i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="57" i:type="d2p1:CrcBasedFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="55" i:nil="true" />
+          <d2p1:Extension z:Ref="51" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-13T15:19:22.5407254+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>34</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="58">hvk3vtnuue17-EPF</d2p1:PersistencyKey>
+          <d2p1:Crc>817826664</d2p1:Crc>
+          <d2p1:SourceFile z:Ref="9" i:nil="true" />
+        </d2p1:FileSource>
+        <d2p1:FileSource z:Id="59" i:type="d2p1:DatabaseTlbFileSource">
+          <_p z:Ref="3" i:nil="true" />
+          <d2p1:AppVersion z:Ref="17" i:nil="true" />
+          <d2p1:Extension z:Ref="51" i:nil="true" />
+          <d2p1:GeneratedFileModificationTime>2025-05-13T16:18:30.5622981+02:00</d2p1:GeneratedFileModificationTime>
+          <d2p1:GeneratedFileSize>-1</d2p1:GeneratedFileSize>
+          <d2p1:PersistencyKey z:Id="60">lm4mh595bhcb#DB</d2p1:PersistencyKey>
+          <d2p1:FileSourceDescription i:nil="true" />
+          <d2p1:IgnoredNodes z:Ref="17" i:nil="true" />
+          <d2p1:NamespaceMode>0</d2p1:NamespaceMode>
+          <d2p1:Networks xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="61" z:Size="0" />
+        </d2p1:FileSource>
+      </Content>
+      <_p z:Ref="2" i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework" />
+    </d2p1:FileSources>
+    <d2p1:TempFileMappings z:Id="62">
+      <Content z:Id="63" z:Size="5" xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework">
+        <d2p1:TempFileMapping z:Id="64">
+          <_p z:Ref="62" i:nil="true" />
+          <d2p1:FileSource z:Ref="16" i:nil="true" />
+          <d2p1:MappingValue z:Id="65">9ejtegjkdaem_TestSysVars</d2p1:MappingValue>
+        </d2p1:TempFileMapping>
+        <d2p1:TempFileMapping z:Id="66">
+          <_p z:Ref="62" i:nil="true" />
+          <d2p1:FileSource z:Ref="22" i:nil="true" />
+          <d2p1:MappingValue z:Id="67">SystemVariablesTypeLib</d2p1:MappingValue>
+        </d2p1:TempFileMapping>
+        <d2p1:TempFileMapping z:Id="68">
+          <_p z:Ref="62" i:nil="true" />
+          <d2p1:FileSource z:Ref="24" i:nil="true" />
+          <d2p1:MappingValue z:Id="69">ACC_db</d2p1:MappingValue>
+        </d2p1:TempFileMapping>
+        <d2p1:TempFileMapping z:Id="70">
+          <_p z:Ref="62" i:nil="true" />
+          <d2p1:FileSource z:Ref="50" i:nil="true" />
+          <d2p1:MappingValue z:Id="71">ACC_db</d2p1:MappingValue>
+        </d2p1:TempFileMapping>
+        <d2p1:TempFileMapping z:Id="72">
+          <_p z:Ref="62" i:nil="true" />
+          <d2p1:FileSource z:Ref="59" i:nil="true" />
+          <d2p1:MappingValue z:Id="73">ACC_db</d2p1:MappingValue>
+        </d2p1:TempFileMapping>
+      </Content>
+      <_p z:Ref="2" i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework" />
+    </d2p1:TempFileMappings>
+  </TempFileMetainfo>
+</TempFileMetainfo>

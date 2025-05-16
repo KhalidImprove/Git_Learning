@@ -1,0 +1,24 @@
+Vector Parameter	1.0
+
+ScalarSingleRecord
+
+Name	Type	Info	Value
+Activation_Speed	Auto		25
+Deactivation_speed	Auto		24
+EU_Speed	Auto		50
+US_Speed	Auto		40
+
+
+StructListSingleRecord
+
+StructName	Speed::Speed
+ParameterName		Value_Number	EU_Speed
+Type		Integer	Integer
+Info			
+Values		1	25
+		2	30
+		3	35
+		4	40
+		5	45
+		6	50
+

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="Forward Vehicle Command">
+    <Object Type="Vector.CANalyzer.Panels.Design.LCDControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="LCDControl2" ControlName="LCD Control 1">
+      <Property Name="Name">LCDControl2</Property>
+      <Property Name="Size">164, 50</Property>
+      <Property Name="Location">412, 250</Property>
+      <Property Name="NumberIntDigits">3</Property>
+      <Property Name="DecimalPlaces">0</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;SpeedOfFowrdCar;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.MeterControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="MeterControl1" ControlName="Meter 1">
+      <Property Name="Name">MeterControl1</Property>
+      <Property Name="Size">210, 149</Property>
+      <Property Name="Location">393, 121</Property>
+      <Property Name="ScaleMax">320</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;SpeedOfFowrdCar;1;;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.PictureBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="PictureBoxControl1" ControlName="Picture Box 1">
+      <Property Name="Name">PictureBoxControl1</Property>
+      <Property Name="Size">251, 149</Property>
+      <Property Name="Location">374, 121</Property>
+      <Property Name="ImageFile">..\..\17 (x64)_2\speedo.jpg</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Switch/Indicator 1">
+      <Property Name="Name">SwitchControl1</Property>
+      <Property Name="Size">113, 148</Property>
+      <Property Name="Location">0, 65</Property>
+      <Property Name="StateCnt">2</Property>
+      <Property Name="SwitchValues">1;2;0;1</Property>
+      <Property Name="SwitchValuesRx">1;2;0;1</Property>
+      <Property Name="SwitchValuesVT">1;2;0/Lower/0;1/Lower/1</Property>
+      <Property Name="SwitchValuesVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;0&lt;/TxValue&gt;&lt;RxValue&gt;1&lt;/RxValue&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;TxValue&gt;1&lt;/TxValue&gt;</Property>
+      <Property Name="ImageFile">..\..\17 (x64)_2\emptyHighway.png</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;CARPresence;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">9</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl3" Children="Controls" ControlName="Static Text 3">
+      <Property Name="Name">StaticTextControl3</Property>
+      <Property Name="Size">38, 13</Property>
+      <Property Name="Location">480, 102</Property>
+      <Property Name="Text">Speed</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls" ControlName="Static Text 2">
+      <Property Name="Name">StaticTextControl2</Property>
+      <Property Name="Size">126, 27</Property>
+      <Property Name="Location">227, 6</Property>
+      <Property Name="Text">Forward Car Command</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl2" Children="Controls" ControlName="Track Bar 1">
+      <Property Name="Name">TrackBarControl2</Property>
+      <Property Name="Size">164, 47</Property>
+      <Property Name="Location">204, 121</Property>
+      <Property Name="MaximumSize">100000, 47</Property>
+      <Property Name="Maximum">100</Property>
+      <Property Name="DisplayMinMax">True</Property>
+      <Property Name="MaximumDouble">100</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;DistanceBetweenCARS;2;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">6</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.CheckBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="CheckBoxControl1" Children="Controls" ControlName="Check Box 1">
+      <Property Name="Name">CheckBoxControl1</Property>
+      <Property Name="Size">113, 17</Property>
+      <Property Name="Location">3, 42</Property>
+      <Property Name="Text">CAR DETECTION</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;CARPresence;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">4</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text 1">
+      <Property Name="Name">StaticTextControl1</Property>
+      <Property Name="Size">173, 20</Property>
+      <Property Name="Location">204, 39</Property>
+      <Property Name="Text">Distance betwwen Cars (meter)
+</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls" ControlName="vehicleSpeed">
+      <Property Name="Name">TrackBarControl1</Property>
+      <Property Name="Size">59, 261</Property>
+      <Property Name="Location">624, 39</Property>
+      <Property Name="MaximumSize">59, 100000</Property>
+      <Property Name="Maximum">320</Property>
+      <Property Name="DisplayMinMax">True</Property>
+      <Property Name="Orientation">Vertical</Property>
+      <Property Name="MaximumDouble">320</Property>
+      <Property Name="DisplayValue">True</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;SpeedOfFowrdCar;1;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">2</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.LCDControl, Vector.CANalyzer.Panels.CommonControls, Version=17.2.88.0, Culture=neutral, PublicKeyToken=null" Name="LCDControl1" ControlName="DistanceBetweenCars">
+      <Property Name="Name">LCDControl1</Property>
+      <Property Name="Size">164, 50</Property>
+      <Property Name="Location">204, 65</Property>
+      <Property Name="DecimalPlaces">2</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;DistanceBetweenCARS;2;;;-1;;;;;;0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">699, 346</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>

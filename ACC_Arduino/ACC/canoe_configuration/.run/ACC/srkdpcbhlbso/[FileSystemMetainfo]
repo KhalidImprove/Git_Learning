@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileSystemMetainfo>
+  <Files>
+    <File Name="ACC_CAPL_VTstudio.can" Time="Tuesday, 29 April 2025 15:01:10">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ACC_CAPL_VTstudio.can" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-29T15:01:10.3126108+02:00</CreationTime>
+      <LastWriteTime>2025-04-29T15:01:10.3126108+02:00</LastWriteTime>
+    </File>
+    <File Name="ACC_Testtable.vtt" Time="Wednesday, 30 April 2025 14:17:44">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="ACC_Testtable.vtt" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-30T14:17:44.6597944+02:00</CreationTime>
+      <LastWriteTime>2025-04-30T14:17:44.6597944+02:00</LastWriteTime>
+    </File>
+    <File Name="build.log" Time="Wednesday, 30 April 2025 14:17:44">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="build.log" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-23T10:42:25.4837516+02:00</CreationTime>
+      <LastWriteTime>2025-04-30T14:17:44.7305876+02:00</LastWriteTime>
+    </File>
+    <File Name="MergedParameterFiles.vparam" Time="Tuesday, 29 April 2025 15:01:10">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="MergedParameterFiles.vparam" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-29T15:01:10.3126108+02:00</CreationTime>
+      <LastWriteTime>2025-04-29T15:01:10.3126108+02:00</LastWriteTime>
+    </File>
+    <File Name="TestSysVars.vsysvar" Time="Wednesday, 23 April 2025 10:23:10">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestSysVars.vsysvar" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-23T10:42:25.4092999+02:00</CreationTime>
+      <LastWriteTime>2025-04-23T10:23:10.0908875+02:00</LastWriteTime>
+    </File>
+    <File Name="TestUnit1.vtumanifest" Time="Wednesday, 30 April 2025 14:17:44">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestUnit1.vtumanifest" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-23T10:42:25.4478810+02:00</CreationTime>
+      <LastWriteTime>2025-04-30T14:17:44.7284089+02:00</LastWriteTime>
+    </File>
+    <File Name="TestUnit1_ctrlvars1.vvarprop" Time="Tuesday, 29 April 2025 13:30:50">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="TestUnit1_ctrlvars1.vvarprop" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-29T13:30:50.6288990+02:00</CreationTime>
+      <LastWriteTime>2025-04-29T13:30:50.6288990+02:00</LastWriteTime>
+    </File>
+    <File Name="[FileSystemMetainfo]" Time="Wednesday, 23 April 2025 10:43:53">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="[FileSystemMetainfo]" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-23T10:43:53.7420494+02:00</CreationTime>
+      <LastWriteTime>2025-04-23T10:43:53.7420494+02:00</LastWriteTime>
+    </File>
+    <File Name="[MakeInfo]" Time="Wednesday, 30 April 2025 14:17:44">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="[MakeInfo]" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-23T10:42:25.4817535+02:00</CreationTime>
+      <LastWriteTime>2025-04-30T14:17:44.7305876+02:00</LastWriteTime>
+    </File>
+    <File Name="ACC_CAPL_VTstudio.can.export.xml" Time="Tuesday, 29 April 2025 13:05:21">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\ACC_CAPL_VTstudio.can.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-29T13:05:21.1219204+02:00</CreationTime>
+      <LastWriteTime>2025-04-29T13:05:21.1219204+02:00</LastWriteTime>
+    </File>
+    <File Name="ACC_Testtable.vtt.export.xml" Time="Tuesday, 29 April 2025 14:53:23">
+      <SerializedBasedFileName>&lt;VFileName v="V9" f="BQL" init="1" base="cfg" name="__ExpTbl_\ACC_Testtable.vtt.export.xml" /&gt;</SerializedBasedFileName>
+      <CreationTime>2025-04-29T14:53:23.1204617+02:00</CreationTime>
+      <LastWriteTime>2025-04-29T14:53:23.1204617+02:00</LastWriteTime>
+    </File>
+  </Files>
+</FileSystemMetainfo>

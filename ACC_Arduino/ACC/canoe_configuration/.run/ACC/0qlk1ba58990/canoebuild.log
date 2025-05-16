@@ -1,0 +1,8 @@
+"14:21:35.755";"Starting build";"mode = make"
+"14:21:35.806";"Transformation of test system variables";""
+"14:21:35.867";"Compile CAPL file";"C:\Users\khali\Desktop\Github_ACC\ACC\canoe_configuration\.run\ACC\0qlk1ba58990\ACC_CAPL_VTstudio.can"
+"14:21:36.404";"Compilation of VTT";"C:\Users\khali\Desktop\Github_ACC\ACC\canoe_configuration\.run\ACC\0qlk1ba58990\ACC_Testtable.vtt"
+"14:21:36.404";"Code generation for VTT File";"C:\Users\khali\Desktop\Github_ACC\ACC\canoe_configuration\.run\ACC\0qlk1ba58990\ACC_Testtable.vtt"
+"14:21:36.458";"Compile CAPL file";"C:\Users\khali\Desktop\Github_ACC\ACC\canoe_configuration\.run\ACC\0qlk1ba58990\ACC_Testtable.vxtx.can"
+"14:21:36.691";"Load VTT Tree";"C:\Users\khali\Desktop\Github_ACC\ACC\canoe_configuration\.run\ACC\0qlk1ba58990\ACC_Testtable.vxtx"
+"14:21:36.704";"Build finished";"result = OK"

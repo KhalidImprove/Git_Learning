@@ -1,0 +1,147 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+void MainTest ()
+{
+  //Engaging Cruise Control
+  testGroupBegin ("Engaging Cruise Control","ACC_OFF \nACC_Standby \nACC_On");
+  ACC_OFF();
+  ACC_Standby();
+  ACC_On();
+  testGroupEnd();
+  
+  
+  //Canceling Cruise Control Operation
+  testGroupBegin ("Canceling Cruise Control Operation","Description");
+  Brake_pedal_pressed();
+  Revert1();
+  Off_Button_pressed();
+  Revert2();
+  Vehicle_speed();
+  Revert3();
+  Fault();
+  Revert4();
+  testGroupEnd();
+}
+
+
+
+testcase ACC_OFF()
+{
+  testCaseTitle ("ACC_OFF","ACC_OFF");
+  testValidateSignalMatch("ACCSTATE OFF", ACCSTATE,0);
+}
+
+testcase ACC_Standby()
+{
+  testCaseDescription("Test of the state transition off ==> standby by setting the sysvar On/OFF");
+  testCaseTitle ("ACC_Standby","ACC_Standby");
+  @sysvar::ACC::On_Off = 1;
+  testWaitForTimeout(120);
+  testValidateSignalMatch("ACCSTATE Standby", ACCSTATE,3);
+}
+
+testcase ACC_On()
+{
+  testCaseTitle ("ACC_On","ACC_On");
+  testCaseDescription("Test of the state transition standby ==> On");
+  @sysvar::ACC::SET_ACC=1;
+  $TargetSpeed=30;
+  testCaseComment("TargetSpeed=30 and TargetSpeed_Confirmed");
+  @sysvar::TargetSpeed_Confirmed=Confirmed;
+  testWaitForTimeout(120);
+   
+  testValidateSignalMatch("ACCSTATE Active", ACCSTATE,2);
+}
+
+testcase Brake_pedal_pressed()
+{
+  testCaseTitle ("Brake pedal is pressed","Brake pedal is pressed");
+  @sysvar::Braking::BrakeSw1 = Applied;
+  testCaseComment("BrakeSwitch Applied");
+  testWaitForTimeout(300); 
+  testValidateSignalMatch("ACCSTATE Standby", ACCSTATE,3);
+}
+
+testcase Revert1()
+{
+  testCaseTitle ("Revert1","Revert to Active status");
+  @sysvar::Braking::BrakeSw1 = NotApplied;
+  testWaitForTimeout(120);
+  testCaseComment("BrakeSwitch NotApplied and TargetSpeed Confirmed");
+  @sysvar::TargetSpeed_Confirmed=Confirmed;
+  testWaitForTimeout(120);
+  testValidateSignalMatch("ACCSTATE Active", ACCSTATE,2);
+}
+
+testcase Off_Button_pressed()
+{
+  testCaseTitle ("Off_Button_pressed","OFF Button is pressed");
+  @sysvar::ACC::On_Off =0;
+  testCaseComment("Off Button is pressed");
+  testWaitForTimeout(120);
+  testValidateSignalMatch("ACCSTATE OFF", ACCSTATE,0);
+}
+
+testcase Revert2()
+{
+  testCaseTitle ("Revert2","Revert to Active status");
+  @sysvar::ACC::On_Off=1;
+  testWaitForTimeout(120);
+  @sysvar::TargetSpeed_Confirmed=Confirmed;
+   testCaseComment("On Button pressed and TargetSpeed Confirmed");
+  testWaitForTimeout(120);
+  testValidateSignalMatch("ACCSTATE Active", ACCSTATE,2);
+  testWaitForTimeout(1000);
+}
+
+testcase Vehicle_speed()
+{
+  testCaseTitle ("Vehicle Speed ","Vehicle Speed <25");
+  @sysvar::ACC::SetSpeed =20;
+  testWaitForTimeout(120);
+  testCaseComment("Set speed to 20 rpm");
+  testValidateSignalMatch("ACCSTATE Standby", ACCSTATE,3);
+  
+}
+
+testcase Revert3()
+{
+  testCaseTitle ("Revert3","Revert to Active status");
+  @sysvar::ACC::SetSpeed=30;
+  testWaitForTimeout(120);
+  @sysvar::TargetSpeed_Confirmed=Confirmed;
+  testCaseComment("Set speed to 30 rpm and TargetSpeed Confirmed");
+  testWaitForTimeout(120);
+  testValidateSignalMatch("ACCSTATE Active", ACCSTATE,2);
+}
+
+testcase Fault()
+{
+  testCaseTitle ("Fault ","System Fault detected");
+  @sysvar::ACC::Fault=1;
+  testWaitForTimeout(120);
+  testCaseComment("System Fault detected");
+  testValidateSignalMatch("ACCSTATE Standby", ACCSTATE,3);
+  
+}
+
+
+testcase Revert4()
+{
+  testCaseTitle ("Revert4","Revert to Active status");
+  @sysvar::ACC::Fault=0;
+  testWaitForTimeout(120);
+  testCaseComment("System Fault removed");
+  @sysvar::TargetSpeed_Confirmed=Confirmed;
+  testWaitForTimeout(120);
+  testValidateSignalMatch("ACCSTATE Active", ACCSTATE,2);
+}

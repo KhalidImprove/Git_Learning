@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDD xmlns="http://www.vector-informatik.com/CDD/1.0">
+  <ECUs>
+    <ECU Name="ACC">
+      <DiagnosticClass>
+        <Name>UDS</Name>
+        <DiagnosticServices>
+          <!-- Diagnostic Session Control -->
+          <Service Name="DiagnosticSessionControl" ID="0x10">
+            <Request>
+              <Parameter Name="SessionType" ID="0x01" DataType="UINT8" />
+            </Request>
+            <Response>
+              <Parameter Name="SessionConfirmation" ID="0x00" DataType="UINT8" />
+            </Response>
+          </Service>
+          <!-- Read Data by Identifier -->
+          <Service Name="ReadDataByIdentifier" ID="0x22">
+            <Request>
+              <Parameter Name="DID" ID="0xF190" DataType="UINT16" />
+            </Request>
+            <Response>
+              <Parameter Name="Data" DataType="ASCII" Length="17" />
+            </Response>
+          </Service>
+        </DiagnosticServices>
+      </DiagnosticClass>
+    </ECU>
+  </ECUs>
+</CDD>

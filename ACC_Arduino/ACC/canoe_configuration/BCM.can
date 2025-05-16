@@ -1,0 +1,112 @@
+﻿/*@!Encoding:65001*/
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  float myCurrentSpeed=50;
+  msTimer update_vehicle_speed_tmr;
+
+}
+on start
+{
+  setSignal(BCM_info::VehicleSpeed,50);
+}
+
+on sysvar_update sysvar::ACC::SetSpeed
+{ 
+   setSignal(VehicleSpeed, @ACC::SetSpeed);  
+}
+
+on signal_update TargetSpeed
+{
+  if($ACCSTATE.phys == ACC_db::VtSig_ACCSTATE::Active && @CARPresence == No) 
+  {
+    if ($VehicleSpeed.phys != $TargetSpeed.phys)
+      setTimerCyclic(update_vehicle_speed_tmr, 30);
+  
+  }
+  else
+  ;
+}
+
+on timer update_vehicle_speed_tmr
+{
+  if (($VehicleSpeed.phys != $TargetSpeed.phys)&&($VehicleSpeed.phys>=25)) //khalid  //+ vehicle speed> 25 as condition 
+  {
+    if($VehicleSpeed < $TargetSpeed)
+      $VehicleSpeed+=1;
+    
+    else 
+      $VehicleSpeed-=1;
+    
+    }
+    
+    
+  
+  else
+    cancelTimer(update_vehicle_speed_tmr);
+  
+}
+   
+
+on signal_update BrakeDecelRequest// var update
+{
+  if(this.phys == 1 && $VehicleSpeed > 0 && @Braking::BrakeSw1 == Applied) //khalid //+ BrakeSw1 applied in conditions 
+  {
+    $VehicleSpeed-= 1;
+    @Braking::BrakeSw1 = Applied;  
+    @sysvar::Braking::Brakelight = 1;
+  
+  }
+
+  
+  else if (this.phys == 0)
+  {
+    @sysvar::Braking::Brakelight = 0;
+    //@Braking::BrakeSw1 = NotApplied;
+    
+   
+  }
+}
+
+on sysvar_update sysvar::CARPresence
+{
+  if (@this.phys == sysvar::ACC::On_Off::On && $ACCSTATE.phys == ACC_db::VtSig_ACCSTATE::Active)
+  {
+    if(@DistanceBetweenCARS <= @sysvar::ACC::time_gap)
+    {
+
+     @Braking::BrakeSw1 = Applied; 
+      
+
+    }
+  
+
+    else
+    {
+     // @Braking::BrakeSw1 = 0; 
+      @CARPresence = No;
+    //  $VehicleSpeed++; 
+     
+    }  
+  
+  }
+ else
+  {
+    @Braking::BrakeSw1 = NotApplied; 
+     // $VehicleSpeed++; 
+  }
+  
+  
+}
+
+
+on sysvar_update sysvar::DistanceBetweenCARS
+{
+  @CARPresence = @CARPresence + 0;
+}
+

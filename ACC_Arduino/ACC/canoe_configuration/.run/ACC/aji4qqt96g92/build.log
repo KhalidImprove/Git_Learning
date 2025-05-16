@@ -1,0 +1,141 @@
+﻿12:17:08 # Build of test unit 'TestUnit1' started...
+12:17:08 - Build Step #0: BuildPreparation (ArtefactID: -1)
+12:17:08 - ------------------------------------------------
+12:17:08 - ============================== Build Step #0 finished ==============================
+12:17:08 - Build Step #1: PreBuildEvent (ArtefactID: -1)
+12:17:08 - ---------------------------------------------
+12:17:08 - ============================== Build Step #1 finished ==============================
+12:17:08 - Build Step #2: BuildTestSequenceDiagramDependencyTree (ArtefactID: -1)
+12:17:08 - ----------------------------------------------------------------------
+12:17:08 - Nothing to do (no Test Sequence Diagram Files)
+12:17:08 - ============================== Build Step #2 finished ==============================
+12:17:08 - Build Step #3: TraceArtefactIds (ArtefactID: -1)
+12:17:08 - ------------------------------------------------
+12:17:08 - Artefact IDs:
+12:17:08 -   0 C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt
+12:17:08 -   1 C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\Parameter.vparam
+12:17:08 -   2 C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_CAPL_VTstudio.can
+12:17:08 - ============================== Build Step #3 finished ==============================
+12:17:08 - Build Step #4: FuzzTestDetection (ArtefactID: -1)
+12:17:08 - -------------------------------------------------
+12:17:08 - ============================== Build Step #4 finished ==============================
+12:17:08 - Build Step #6: CaplIncludeContent (ArtefactID: -1)
+12:17:08 - --------------------------------------------------
+12:17:08 - ============================== Build Step #6 finished ==============================
+12:17:08 - Build Step #5: ValidateTestUnit (ArtefactID: -1)
+12:17:08 - ------------------------------------------------
+12:17:08 # Checking test unit consistency
+12:17:08 - ============================== Build Step #5 finished ==============================
+12:17:08 - Build Step #7: CopyParameterFiles (ArtefactID: -1)
+12:17:08 - --------------------------------------------------
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\MergedParameterFiles.vparam' is up to date (regarding to dependencies in MAKE database)
+12:17:08 - ============================== Build Step #7 finished ==============================
+12:17:08 - Build Step #8: BuildParameterTypeLibs (ArtefactID: -1)
+12:17:08 - ------------------------------------------------------
+12:17:08 - Nothing to do (no C# documents and no .NET assemblies)
+12:17:08 - ============================== Build Step #8 finished ==============================
+12:17:08 - Build Step #9: BuildCaplTypeLibs (ArtefactID: -1)
+12:17:08 - -------------------------------------------------
+12:17:08 - Nothing to do (no C# documents and no .NET assemblies)
+12:17:08 - ============================== Build Step #9 finished ==============================
+12:17:08 - Build Step #10: BuildSysVarTypeLibs (ArtefactID: -1)
+12:17:08 - ----------------------------------------------------
+12:17:08 - Nothing to do (no C# documents and no .NET assemblies)
+12:17:08 - ============================== Build Step #10 finished ==============================
+12:17:08 - Build Step #11: BuildCoTypeLib (ArtefactID: -1)
+12:17:08 - -----------------------------------------------
+12:17:08 - Nothing to do (no C# documents and no .NET assemblies or no CO-Lib)
+12:17:08 - ============================== Build Step #11 finished ==============================
+12:17:08 - Build Step #12: ValidateTteFile (ArtefactID: 0)
+12:17:08 - -----------------------------------------------
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt' is up to date (regarding to export table hash)
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt' is outdated
+12:17:08 - Reason: Last write time of 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt' (2025-05-02 12:17:05) differs from 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt' (2025-05-02 12:01:40) stored in MAKE database
+12:17:08 # Compiling file 'ACC_Testtable.vtt' in test unit 'TestUnit1'
+12:17:08 # Compilation succeeded (12:17:08) -- 0 errors, 0 warnings
+12:17:08 - ============================== Build Step #12 finished ==============================
+12:17:08 - Build Step #13: ValidateCaplFiles (ArtefactID: -1)
+12:17:08 - --------------------------------------------------
+12:17:08 - CAPL file dependencies (direct dependencies only):
+12:17:08 - C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_CAPL_VTstudio.can --> <Parameter.vparam>, <sc72q2fgq1q1=VP.vvarprop>
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_CAPL_VTstudio.can' is up to date (regarding to dependencies in MAKE database)
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_CAPL_VTstudio.can' is up to date (regarding to user CAPL export table hash)
+12:17:08 - ============================== Build Step #13 finished ==============================
+12:17:08 - Build Step #14: ValidateParameterFile (ArtefactID: 1)
+12:17:08 - -----------------------------------------------------
+12:17:08 - Dependent files:
+12:17:08 - C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\sc72q2fgq1q1=VP.vvarprop
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\Parameter.vparam' is up to date (regarding to dependencies in MAKE database)
+12:17:08 - ============================== Build Step #14 finished ==============================
+12:17:08 - Build Step #15: CaplValidatorController (ArtefactID: -1)
+12:17:08 - --------------------------------------------------------
+12:17:08 - ============================== Build Step #15 finished ==============================
+12:17:08 - Build Step #16: ConditionalBuildAbort (ArtefactID: -1)
+12:17:08 - ------------------------------------------------------
+12:17:08 - All Validation succeeded - continue build.
+12:17:08 - ============================== Build Step #16 finished ==============================
+12:17:08 - Build Step #17: CollectNavigationInfo (ArtefactID: 0)
+12:17:08 - -----------------------------------------------------
+12:17:08 - ============================== Build Step #17 finished ==============================
+12:17:08 - Build Step #18: CopyVttFile (ArtefactID: 0)
+12:17:08 - -------------------------------------------
+12:17:08 - Export table file 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\sc72q2fgq1q1~3-0.' not copied to 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\__ExpTbl_\ACC_Testtable.vtt.export.xml' because export tables have not changed
+12:17:08 - Copied file 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_Testtable.vtt' to 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\ACC_Testtable.vtt'
+12:17:08 - ============================== Build Step #18 finished ==============================
+12:17:08 - Build Step #19: CopyCaplDocument (ArtefactID: 2)
+12:17:08 - ------------------------------------------------
+12:17:08 - CAPL file dependencies (direct dependencies only):
+12:17:08 - C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\ACC_CAPL_VTstudio.can --> <Parameter.vparam>, <sc72q2fgq1q1=VP.vvarprop>
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\ACC_CAPL_VTstudio.can' is up to date (regarding to dependencies in MAKE database)
+12:17:08 - ============================== Build Step #19 finished ==============================
+12:17:08 - Build Step #20: MoveCSharpXmlDocumentation (ArtefactID: -1)
+12:17:08 - -----------------------------------------------------------
+12:17:08 - MoveCSharpXmlDocumentation: Skipped because option is deactivated
+12:17:08 - ============================== Build Step #20 finished ==============================
+12:17:08 - Build Step #21: ValidateTteFile (ArtefactID: 0)
+12:17:08 - -----------------------------------------------
+12:17:08 - ============================== Build Step #21 finished ==============================
+12:17:08 - Build Step #22: ValidateIdUsage (ArtefactID: -1)
+12:17:08 - ------------------------------------------------
+12:17:08 - ============================== Build Step #22 finished ==============================
+12:17:08 - Build Step #23: ExportTraceabilityMatrix (ArtefactID: -1)
+12:17:08 - ---------------------------------------------------------
+12:17:08 - ExportTraceabilityMatrix: Skipped because option is deactivated
+12:17:08 - ============================== Build Step #23 finished ==============================
+12:17:08 - Build Step #24: ExportTestDesignDocumentation (ArtefactID: -1)
+12:17:08 - --------------------------------------------------------------
+12:17:08 - ExportTestDesignDocumentation: Skipped because option is deactivated
+12:17:08 - ============================== Build Step #24 finished ==============================
+12:17:08 - Build Step #25: IncludeSources (ArtefactID: -1)
+12:17:08 - -----------------------------------------------
+12:17:08 - IncludeSources: Skipped because option is deactivated
+12:17:08 - ============================== Build Step #25 finished ==============================
+12:17:08 - Build Step #26: WriteSystemEnvironment (ArtefactID: -1)
+12:17:08 - -------------------------------------------------------
+12:17:08 - Copy merged Test System Variable file...
+12:17:08 - Copy <760edq5pld6e-MTSV> to C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\TestSysVars.vsysvar
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\TestSysVars.vsysvar' is up to date (regarding to dependencies in MAKE database)
+12:17:08 - Add variant property file...
+12:17:08 - 'C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\TestUnit1_ctrlvars1.vvarprop' is up to date (regarding to dependencies in MAKE database)
+12:17:08 - ============================== Build Step #26 finished ==============================
+12:17:08 - Build Step #27: WriteTUProperties (ArtefactID: -1)
+12:17:08 - --------------------------------------------------
+12:17:08 - ============================== Build Step #27 finished ==============================
+12:17:08 - Build Step #28: WriteTetEntries (ArtefactID: -1)
+12:17:08 - ------------------------------------------------
+12:17:08 - ============================== Build Step #28 finished ==============================
+12:17:08 - Build Step #29: FuzzTestNodeLayer (ArtefactID: -1)
+12:17:08 - --------------------------------------------------
+12:17:08 - ============================== Build Step #29 finished ==============================
+12:17:08 - Build Step #30: WriteManifest (ArtefactID: -1)
+12:17:08 - ----------------------------------------------
+12:17:08 - Writing manifest C:\Users\khali\Desktop\Github_ACC\ACC\ACC_Test\VTestStudioTest cases\obj_1st_Test\bin_sc72q2fgq1q1\TestUnit1.vtumanifest
+12:17:08 - ============================== Build Step #30 finished ==============================
+12:17:08 - Build Step #35: RemoveOrphanedBuildArtfacts (ArtefactID: -1)
+12:17:08 - ------------------------------------------------------------
+12:17:08 - Removing orphaned build artefacts from the vtuexe's main folder...
+12:17:08 - Nothing to do.
+12:17:08 - ============================== Build Step #35 finished ==============================
+12:17:08 - Build Step #31: WriteMetainfo (ArtefactID: -1)
+12:17:08 - ----------------------------------------------
+12:17:08 - BUILD TIME excluding ZIP/UNZIP (hours:minutes:seconds:milliseconds): 00:00:00:155

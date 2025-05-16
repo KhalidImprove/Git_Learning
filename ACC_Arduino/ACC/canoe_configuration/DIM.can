@@ -1,0 +1,77 @@
+﻿/*@!Encoding:65001*/
+/*@!Encoding:65001*/
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+
+
+  int speed_forword = 120;
+
+}
+
+on sysvar_update sysvar::Braking::BrakeSw1 
+{
+  if(@this.phys==Applied) 
+    setSignal(BrakeSwitch1, Applied); 
+  
+  else
+    setSignal(BrakeSwitch1, NotApplied);
+  
+  
+}
+/// by ranim
+on sysvar sysvar::ACC::time_gap_p
+{ 
+  if(@this.phys==1 && @sysvar::ACC::time_gap<5)
+  @sysvar::ACC::time_gap+=1;
+  
+}
+on sysvar sysvar::ACC::time_gap_m
+{
+  if(@this.phys==1 && @sysvar::ACC::time_gap>3)
+  @sysvar::ACC::time_gap-=1;
+  
+}
+
+on start
+{
+  @ sysvar::ACC::time_gap= 3;
+  @sysvar::ACC::On_Off= sysvar::ACC::On_Off::Off;
+  @Braking::BrakeSw1= NotApplied;
+}
+
+
+
+on sysvar sysvar::ACC::SET_P
+{
+  if(@this.phys == 1 && $TargetSpeed <=120)
+   // setSignal(ACCSTATE , 2);
+     $TargetSpeed+=5;
+  
+  if($TargetSpeed> 120)
+    $TargetSpeed=120;
+}
+on sysvar sysvar::ACC::SET_M
+{
+  if(@this.phys == 1 && $TargetSpeed>25)
+    $TargetSpeed-=5;
+  if($TargetSpeed<=25 )//0
+    $TargetSpeed=25;
+    
+}
+
+
+on sysvar_update CARPresence //khalid //Adding CARPresence signal 
+{
+  if(@this.phys==No) 
+    setSignal(CarPresence,NotPresent); 
+  
+  else if (@this.phys==Yes) 
+    setSignal(CarPresence,Present);
+  
+}

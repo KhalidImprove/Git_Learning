@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectVariantPropertyModel>
+  <FileFormatVersion>3</FileFormatVersion>
+  <ProjectVariantProperties>
+    <VariantProperties>
+      <VariantProperty>
+        <Name>Market</Name>
+        <Info></Info>
+        <ValueType>Integer</ValueType>
+        <Modifiable>true</Modifiable>
+        <TUStartValueRef></TUStartValueRef>
+        <PreDefinedValues />
+        <PossibleValues />
+        <ValueTable>
+          <RestrictValuesToValueTable>false</RestrictValuesToValueTable>
+          <ValueTableEntries>
+            <ValueTableEntry>
+              <IntValue>0</IntValue>
+              <StrValue>EU</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>1</IntValue>
+              <StrValue>US</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+            <ValueTableEntry>
+              <IntValue>2</IntValue>
+              <StrValue>CHINA</StrValue>
+              <IsHexValue>false</IsHexValue>
+            </ValueTableEntry>
+          </ValueTableEntries>
+        </ValueTable>
+      </VariantProperty>
+    </VariantProperties>
+    <ModifiableParameters />
+  </ProjectVariantProperties>
+</ProjectVariantPropertyModel>

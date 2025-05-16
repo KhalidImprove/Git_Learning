@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CANdelaStudioDocument>
+  <DocumentHeader>
+    <Name>SimpleDiagnosticsConfig</Name>
+    <Version>1.0</Version>
+    <ToolInfo>
+      <ToolName>CANdelaStudio</ToolName>
+      <ToolVersion>15.0</ToolVersion>
+    </ToolInfo>
+  </DocumentHeader>
+
+  <Protocols>
+    <Protocol>
+      <Name>ISO-TP</Name>
+      <Description>ISO Transport Protocol for diagnostic communication</Description>
+      <Parameters>
+        <Parameter>
+          <Name>STmin</Name>
+          <Value>10</Value>
+        </Parameter>
+        <Parameter>
+          <Name>BlockSize</Name>
+          <Value>8</Value>
+        </Parameter>
+      </Parameters>
+    </Protocol>
+  </Protocols>
+
+  <ECUs>
+    <ECU>
+      <Name>ACC</Name>
+      <Addressing>
+        <Functional>
+          <Request>0x7DF</Request>
+          <Response>0x7E8</Response>
+        </Functional>
+        <Physical>
+          <Request>0x7E0</Request>
+          <Response>0x7E8</Response>
+        </Physical>
+      </Addressing>
+    </ECU>
+  </ECUs>
+
+  <DiagnosticServices>
+    <Service>
+      <Name>ReadDTC</Name>
+      <ID>0x19</ID>
+      <Subfunctions>
+        <Subfunction>
+          <Name>ReportNumberOfDTCByStatusMask</Name>
+          <ID>0x01</ID>
+        </Subfunction>
+      </Subfunctions>
+      <Response>
+        <Positive>
+          <ID>0x59</ID>
+          <Format>Variable</Format>
+        </Positive>
+        <Negative>
+          <ID>0x7F</ID>
+        </Negative>
+      </Response>
+    </Service>
+  </DiagnosticServices>
+</CANdelaStudioDocument>

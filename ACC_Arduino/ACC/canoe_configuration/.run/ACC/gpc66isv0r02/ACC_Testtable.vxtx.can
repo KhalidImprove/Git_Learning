@@ -1,0 +1,1438 @@
+﻿/* !Encoding: 65001  */
+includes
+{
+  #include "__VariablesLib.cin"
+  #include "__CaplGeneratorLib.cin"
+  #include "__CANoeReportFuntionsLib.cin"
+}
+
+variables
+{
+  // Global variables defined within this CAPL file
+}
+
+testcase Ttl4caelu_Speed_change(int64 EU_Speed, int64 Value_Number)
+{
+  stack long __tableHandle;
+  SetBreakOnFail(1);
+
+  TestCommandBegin(__eSet, __cSet, "", "0");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed.phys = EU_Speed;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "EU_Speed");
+      
+      ReportSetLValueOrSignalNotOnline(getSignalTime(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed), __cArray2, __cArray4, 8192);
+      ReportTableRow(__tableHandle, 0, __cArray4, __cAOp, EU_Speed, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "1");
+  {
+    Wait("1", (3 * 1000000000LL), 1000000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, EU_Speed, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "EU_Speed");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", EU_Speed, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(Value_Number, 0, ">=") == 1;
+      snprintf(__cArray, 8192, "%s", "Value_Number");
+      snprintf(__cArray2, 8192, "%s '%s'", __cVariable, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, ">=", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, Value_Number);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_TtInit()
+{
+  stack long __tableHandle;
+}
+
+void Ttl4caelu_Tet_Tc0()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc0", __eTcDef, __eLocal);  
+  CallInterfaceFunction("ACC_OFF", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc0()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eCheck, __cCheck, "check that ACCSTATE==OFF", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "OFF");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc1()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc1", __eTcDef, __eLocal);  
+  CallInterfaceFunction("ACC_Standby", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc1()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`On_Off = 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (100 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 3, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Standby");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 3, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc2()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc2", __eTcDef, __eLocal);  
+  CallInterfaceFunction("ACC_On", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc2()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eCheck, __cCheck, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 3, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Standby");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 3, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`TargetSpeed_Confirmed, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotConfirmed");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`TargetSpeed_Confirmed);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`SET_ACC, 1, IsNegative(1), "!=") == 1;
+      snprintf(__cArray, 8192, "%s", "SET_ACC");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "!=", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`SET_ACC);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`InstrumentCluster::`ICM_Command::`BrakeSwitch1, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSwitch1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotAppliedBrakeSwitch");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`InstrumentCluster::`ICM_Command::`BrakeSwitch1, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`EnginControl::`ECM_inf::`BrakeSwitch2, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSwitch2");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotAppliedBrakeSwitch");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`EnginControl::`ECM_inf::`BrakeSwitch2, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "1");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`SET_ACC = 1;
+      snprintf(__cArray, 8192, "%s", "SET_ACC");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    {
+      $`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed.phys = 30;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      ReportSetLValueOrSignalNotOnline(getSignalTime(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed), __cArray2, __cArray4, 8192);
+      ReportTableRow(__tableHandle, 0, __cArray4, __cAOp, 30, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    {
+      @sysvarInt::`TargetSpeed_Confirmed = 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (100 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`On_Off, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`On_Off);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`TargetSpeed_Confirmed, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`TargetSpeed_Confirmed);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, 25, ">=") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, ">=", 25, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eCheck, __cCheck, "Chceck that ACC active", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 2, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 2, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_TcListCall0()
+{
+  stack long __tableHandle;
+  CallTTETCList("Ttl4caelu_Speed_change", "6,6", "5b4eb9865ab5da32622c0720dadabebe", __eLocal);
+}
+
+void Ttl4caelu_Tet_Tc3()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc3", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Brake pedal is pressed", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc3()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eCheck, __cCheck, "Check preconditions of ACC active", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, 25, ">=") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, ">=", 25, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`TargetSpeed_Confirmed, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`TargetSpeed_Confirmed);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`On_Off, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`On_Off);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 2, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 2, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`InstrumentCluster::`ICM_Command::`BrakeSwitch1, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSwitch1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotAppliedBrakeSwitch");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`InstrumentCluster::`ICM_Command::`BrakeSwitch1, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`EnginControl::`ECM_inf::`BrakeSwitch2, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSwitch2");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotAppliedBrakeSwitch");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`EnginControl::`ECM_inf::`BrakeSwitch2, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`CARPresence, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "CARPresence");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "No");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`CARPresence);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`Braking::`BrakeSw1, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSw1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotApplied");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`Braking::`BrakeSw1);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "1");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`Braking::`BrakeSw1 = 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSw1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Applied");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (150 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(sysvarInt::`Braking::`BrakeSw1, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSw1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Applied");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`Braking::`BrakeSw1);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`InstrumentCluster::`ICM_Command::`BrakeSwitch1, 1, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "BrakeSwitch1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "AppliedBrakeSwitch");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`InstrumentCluster::`ICM_Command::`BrakeSwitch1, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`CARPresence, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "CARPresence");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "No");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`CARPresence);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "2");
+  {
+    Wait("1", (120 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "3");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 3, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Standby");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 3, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, 25, ">=") == 1;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, ">=", 25, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc4()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc4", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Revert", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc4()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eSet, __cSet, "", "0");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      @sysvarInt::`Braking::`BrakeSw1 = 0;
+      snprintf(__cArray, 8192, "%s", "BrakeSw1");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotApplied");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    {
+      $`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed.phys = 30;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      ReportSetLValueOrSignalNotOnline(getSignalTime(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed), __cArray2, __cArray4, 8192);
+      ReportTableRow(__tableHandle, 0, __cArray4, __cAOp, 30, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eAwaitValueMatch, __cAwaitValueMatch, "", "1");
+  {
+  
+    int64 __time;
+    long __setFailed;
+    __setFailed = 0;
+    __time = 5 * 1000000000LL;
+    if (__time < 0)
+    {
+      testStepErrorInTestSystem(0, "1", "Unable to wait for %.3f %s. Please check input parameter.", __time / ((float)1000000000), "s");
+    }
+    else
+    {
+                        snprintf(__cArray, elCount(__cArray), "System variable '%s'", "BrakeSw1");
+      __setFailed |= testJoinSignal(sysvarInt::`Braking::`BrakeSw1, __cArray,
+                        delegate dword(sysvar * __cbParam)
+                        {
+                          __csr = CheckSignalMatch(__cbParam, 0, IsNegative(0), "==") == 1;
+                          return __csr;
+                        }) < 0;
+      if (__setFailed != 0)
+      {
+        testStepErrorInTestSystem(0, "1", "Unable to set value condition.");
+      }
+      else
+      {
+        __bVerdict = testWaitForAllJoinedEventsNS(__time) > 0;
+        __tableHandle = ReportTableHead5Columns("Waited for occurrence of 1 value condition.", __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+                        __csr = CheckSignalMatch(sysvarInt::`Braking::`BrakeSw1, 0, IsNegative(0), "==") == 1;
+                        snprintf(__cArray, 8192, "%s", "BrakeSw1");
+                        snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+                        snprintf(__cArray3, 8192, "%s", "NotApplied");
+                        ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+                        ReportCell(__tableHandle, @sysvarInt::`Braking::`BrakeSw1);
+                        ReportCellResult(__tableHandle, __csr, __ePassFail);
+        ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+      }
+    }
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, 25, ">=") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, ">=", 25, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`On_Off, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`On_Off);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`SET_ACC, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "SET_ACC");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`SET_ACC);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`CARPresence, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "CARPresence");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "No");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`CARPresence);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eSet, __cSet, "", "3");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      @sysvarInt::`TargetSpeed_Confirmed = 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "4");
+  {
+    Wait("1", (120 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "5");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 2, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 2, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc5()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc5", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Off button is pressed", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc5()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(1);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`On_Off = 0;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Off");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (100 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`On_Off, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Off");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`On_Off);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "OFF");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc6()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc6", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Revert", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc6()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`On_Off = 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (2 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, 25, ">=") == 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, ">=", 25, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`On_Off, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`On_Off);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`SET_ACC, 1, IsNegative(1), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "SET_ACC");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "On");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`SET_ACC);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(sysvarInt::`CARPresence, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "CARPresence");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "No");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`CARPresence);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eSet, __cSet, "", "1");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      @sysvarInt::`TargetSpeed_Confirmed = 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "2");
+  {
+    Wait("1", (120 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "3");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 2, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 2, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "4");
+  {
+    Wait("1", (1 * 1000000000LL), 1000000000, "");
+  }
+  TestCommandEnd();
+
+}
+
+void Ttl4caelu_Tet_Tc7()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc7", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Vehicle speed <25", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc7()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`SetSpeed = 20;
+      snprintf(__cArray, 8192, "%s", "SetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 20, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (120 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, 20, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 20, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 3, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Standby");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 3, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc8()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc8", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Revert", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc8()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`SetSpeed = 30;
+      snprintf(__cArray, 8192, "%s", "SetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 30, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (120 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, 30, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 30, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "1");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`TargetSpeed_Confirmed = 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (120 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 2, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 2, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc9()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc9", __eTcDef, __eLocal);  
+  CallInterfaceFunction("System Fault", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc9()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(1);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`Fault = 1;
+      snprintf(__cArray, 8192, "%s", "Fault");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (120 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 3, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Standby");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 3, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc10()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc10", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Revert", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc10()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "0");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`ACC::`Fault = 0;
+      snprintf(__cArray, 8192, "%s", "Fault");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Inactive");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (120 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(sysvarInt::`ACC::`Fault, 0, IsNegative(0), "==") == 1;
+      snprintf(__cArray, 8192, "%s", "Fault");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Inactive");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportCell(__tableHandle, @sysvarInt::`ACC::`Fault);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eStateChange, __cStateChange, "", "1");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead3Columns(__cSetCaption, __cTSym, __cTOp, __cAssigned);
+    {
+      @sysvarInt::`TargetSpeed_Confirmed = 1;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Confirmed");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 1, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  
+    snprintf(__cArray, 8192, "%s", "");
+    Wait("2", (120 * 1000000LL), 1000000, __cArray);
+  
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 2, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Active");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 2, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "3", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc11()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc11", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Variant Test for EU", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc11()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(0);
+
+  TestCaseDescription("For EU");
+
+  TestCommandBegin(__eSet, __cSet, "TargetSpeed=50 for EU", "0");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed.phys = syspar::`EU_Speed;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "EU_Speed");
+      
+      ReportSetLValueOrSignalNotOnline(getSignalTime(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed), __cArray2, __cArray4, 8192);
+      ReportTableRow(__tableHandle, 0, __cArray4, __cAOp, syspar::`EU_Speed, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "1");
+  {
+    Wait("1", (4 * 1000000000LL), 1000000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, syspar::`EU_Speed, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "EU_Speed");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", syspar::`EU_Speed, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc12()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc12", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Variant Test for US", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc12()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(1);
+
+  TestCaseDescription("For US");
+
+  TestCommandBegin(__eSet, __cSet, "TargetSpeed=40 for US", "0");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed.phys = syspar::`US_Speed;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "US_Speed");
+      
+      ReportSetLValueOrSignalNotOnline(getSignalTime(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed), __cArray2, __cArray4, 8192);
+      ReportTableRow(__tableHandle, 0, __cArray4, __cAOp, syspar::`US_Speed, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "1");
+  {
+    Wait("1", (4 * 1000000000LL), 1000000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "2");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, syspar::`US_Speed, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "VehicleSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "US_Speed");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", syspar::`US_Speed, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`BrakeControl::`BCM_info::`VehicleSpeed, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+
+void Ttl4caelu_Tet_Tc13()
+{
+  CreateTTEIFFunction("Ttl4caelu_Tc13", __eTcDef, __eLocal);  
+  CallInterfaceFunction("Postconditions", __cEmpty , __cEmpty );
+}
+testcase Ttl4caelu_Tc13()
+{
+  stack long __tableHandle;
+  SetBreakOnFail(1);
+
+  TestCommandBegin(__eSet, __cSet, "", "0");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      $`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed.phys = 25;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "");
+      
+      ReportSetLValueOrSignalNotOnline(getSignalTime(`CAN::dbNode::`ACC::`ACC_info::`TargetSpeed), __cArray2, __cArray4, 8192);
+      ReportTableRow(__tableHandle, 0, __cArray4, __cAOp, 25, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "1");
+  {
+    Wait("1", (2 * 1000000000LL), 1000000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eSet, __cSet, "", "2");
+  {
+    __tableHandle = ReportTableHead3Columns(__cSetCaption , __cTSym, __cTOp, __cAssigned); 
+    {
+      @sysvarInt::`ACC::`SET_ACC = 0;
+      snprintf(__cArray, 8192, "%s", "SET_ACC");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Off");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    {
+      @sysvarInt::`ACC::`On_Off = 0;
+      snprintf(__cArray, 8192, "%s", "On_Off");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "Off");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    {
+      @sysvarInt::`TargetSpeed_Confirmed = 0;
+      snprintf(__cArray, 8192, "%s", "TargetSpeed_Confirmed");
+      snprintf(__cArray2, 8192, "%s '%s'", __cSysVar, __cArray);
+      snprintf(__cArray3, 8192, "%s", "NotConfirmed");
+      
+      ReportTableRow(__tableHandle, 0, __cArray2, __cAOp, 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      
+  
+    }
+    ReportTableEndTestStep(__tableHandle, "1");
+  }
+  TestCommandEnd();
+
+
+  TestCommandBegin(__eWait, __cWait, "", "3");
+  {
+    Wait("1", (120 * 1000000LL), 1000000, "");
+  }
+  TestCommandEnd();
+
+  TestCommandBegin(__eCheck, __cCheck, "", "4");
+  {
+    __bVerdict = __eVerdictPass;
+    __tableHandle = ReportTableHead5Columns(__cCheckCaption, __cTSym, __cTOp, __cRefVal, __cActual, __cRes);
+    {
+      __csr = CheckSignalMatch(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, 0, "==") == 1;
+      snprintf(__cArray, 8192, "%s", "ACCSTATE");
+      snprintf(__cArray2, 8192, "%s '%s'", __cCANSignal, __cArray);
+      snprintf(__cArray3, 8192, "%s", "OFF");
+      ReportTableRow(__tableHandle, 0, __cArray2, "==", 0, __cArray3, __oneOfFlag, __bSetInCheckAlignment);
+      ReportLValueOrSignalNotOnline(`CAN::dbNode::`ACC::`ACC_info::`ACCSTATE, __cArray5, 8192);
+      ReportCell(__tableHandle, __cArray5);
+      ReportCellResult(__tableHandle, __csr, __ePassFail);
+  
+      __bVerdict = __bVerdict && __csr;
+    }
+    ReportTableEndVerdict(__tableHandle, "1", __bVerdict);
+  }
+  TestCommandEnd();
+
+
+}
+

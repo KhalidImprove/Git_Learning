@@ -211,16 +211,16 @@ class CanoeTestEvents:
 app = CanoeSync()
 
 # load the sample configuration
-app.Load(r'c:\Users\khali\Desktop\GitHub_ACC\ACC_Arduino\ACC\canoe_configuration\ACC.cfg')
+app.Load(r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\canoe_configuration\ACC.cfg')
 
 
 
 
 # add test modules to the configuration
-app.LoadTestSetup(r'C:\Users\khali\Desktop\GitHub_ACC\ACC_Arduino\ACC\ACC_Test\CAPL test cases\Test Environment.tse')
+app.LoadTestSetup(r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\ACC_Test\CAPL test cases\Test Environment.tse')
 
 # add a test configuration and a list of test units
-app.LoadTestConfiguration('TestConfiguration', [r'C:\Users\khali\Desktop\GitHub_ACC\ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\TestUnit1.vtuexe'])
+app.LoadTestConfiguration('TestConfiguration', [r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\TestUnit1.vtuexe'])
 
 # start the measurement
 app.Start()    
@@ -232,9 +232,9 @@ app.Start()
 app.RunTestConfigs()
 
 # wait for a keypress to stop the measurement
-print("Press any key to stop the measurement ...")
-while not msvcrt.kbhit():
-    DoEvents()
+print("test finished")
+# while not msvcrt.kbhit():
+#     DoEvents()
 
 # stop the measurement
 app.Stop()

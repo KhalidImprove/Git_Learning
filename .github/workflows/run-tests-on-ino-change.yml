@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+       fetch-depth: 0  # optional, get full history
 
     - name: Run Python script with CANoe
       run: python ACC_Arduino/Python/RunAllTests_modified.py

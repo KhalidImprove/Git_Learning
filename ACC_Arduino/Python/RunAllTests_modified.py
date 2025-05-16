@@ -220,7 +220,7 @@ app.Load(r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\canoe_configurati
 app.LoadTestSetup(r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\ACC_Test\CAPL test cases\Test Environment.tse')
 
 # add a test configuration and a list of test units
-app.LoadTestConfiguration('TestConfiguration', [r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1\TestUnit1.vtuexe'])
+app.LoadTestConfiguration('TestConfiguration', [r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\ACC_Test\VTestStudioTest cases\TestUnit1.vtuexe'])
 
 # start the measurement
 app.Start()    

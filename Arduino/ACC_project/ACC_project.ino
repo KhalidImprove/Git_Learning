@@ -5,7 +5,7 @@ const int SPI_CS_PIN = 9;
 const int BRAKE_PIN = 7;
 
 //Test
-//Test
+//Test...
 // Simulated input values
 bool TargetSpeedConfirmed= 0;
 int targetSpeed = 40;

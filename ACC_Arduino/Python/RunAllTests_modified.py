@@ -214,8 +214,6 @@ app = CanoeSync()
 app.Load(r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\canoe_configuration\ACC.cfg')
 
 
-
-
 # add test modules to the configuration
 app.LoadTestSetup(r'C:\Users\khali\Desktop\Git_Learning\ACC_Arduino\ACC\ACC_Test\CAPL test cases\Test Environment.tse')
 

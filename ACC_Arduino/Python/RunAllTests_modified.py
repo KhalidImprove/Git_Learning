@@ -58,20 +58,31 @@ class CanoeSync(object):
     def WaitForStop(self):
         return DoEventsUntil(lambda: CanoeSync.Stopped)
 
+    # def Load(self, cfgPath):
+    #     # make sure current configuration has no modified flag
+    #     self.App.Configuration.Modified = False
+    #     # current dir must point to the script file
+    #     cfg = os.path.dirname(os.path.realpath(__file__))
+    #     cfg = os.path.join (cfg, cfgPath)
+    #     print('Opening: ', cfg)
+    #     self.ConfigPath = os.path.dirname(cfg)
+    #     self.App.Open(cfg)
+    #     self.Configuration = self.App.Configuration
+    #     # TestConfigs property to access test configurations
+    #     self.TestConfigs = []
+    #     # TestModules property to access test modules
+    #     self.TestModules = [] 
+
     def Load(self, cfgPath):
-        # make sure current configuration has no modified flag
-        self.App.Configuration.Modified = False
-        # current dir must point to the script file
-        cfg = os.path.dirname(os.path.realpath(__file__))
-        cfg = os.path.join (cfg, cfgPath)
-        print('Opening: ', cfg)
-        self.ConfigPath = os.path.dirname(cfg)
-        self.App.Open(cfg)
-        self.Configuration = self.App.Configuration
-        # TestConfigs property to access test configurations
-        self.TestConfigs = []
-        # TestModules property to access test modules
-        self.TestModules = [] 
+      self.App.Configuration.Modified = False
+      cfg = cfgPath  # Use the absolute path directly
+      print('Opening: ', cfg)
+      self.ConfigPath = os.path.dirname(cfg)
+      self.App.Open(cfg)
+      self.Configuration = self.App.Configuration
+      self.TestConfigs = []
+      self.TestModules = []
+
 
     def LoadTestSetup(self, testsetup):
         self.TestSetup = self.App.Configuration.TestSetup
